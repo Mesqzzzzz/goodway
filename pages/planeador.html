@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Goodway - Planeador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+    <header class="bg-white shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
+        <nav class="space-x-6">
+          <a href="../app.html" class="text-gray-700 hover:text-blue-600"
+            >Início</a
+          >
+          <a href="planeador.html" class="text-blue-600 font-semibold"
+            >Planeador</a
+          >
+          <a href="mapa.html" class="text-gray-700 hover:text-blue-600">Mapa</a>
+          <a href="alojamentos.html" class="text-gray-700 hover:text-blue-600"
+            >Alojamentos</a
+          >
+          <a href="perfil.html" class="text-gray-700 hover:text-blue-600"
+            >Perfil</a
+          >
+          <button onclick="logout()" class="text-red-600 hover:underline">
+            Sair
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" class="flex-grow max-w-4xl mx-auto p-6">
+      <section class="space-y-6">
+        <h2 class="text-2xl font-bold text-blue-600">
+          Planeador de Itinerário
+        </h2>
+        <form id="form-planeador" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium"
+              >Distância diária (km)</label
+            >
+            <input
+              id="input-distancia"
+              type="number"
+              min="5"
+              max="50"
+              class="w-full p-2 border rounded"
+              placeholder="Ex: 25"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium"
+              >Nível de dificuldade</label
+            >
+            <select
+              id="input-dificuldade"
+              class="w-full p-2 border rounded"
+              required
+            >
+              <option value="">Seleciona uma opção</option>
+              <option value="facil">Fácil</option>
+              <option value="medio">Médio</option>
+              <option value="dificil">Difícil</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Interesses</label>
+            <input
+              id="input-interesses"
+              type="text"
+              class="w-full p-2 border rounded"
+              placeholder="Ex: natureza, igrejas"
+            />
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Gerar Roteiro
+          </button>
+        </form>
+
+        <div
+          id="resultado-rota"
+          class="hidden mt-6 p-4 bg-white shadow rounded border"
+        >
+          <h3 class="text-xl font-semibold mb-2 text-blue-500">
+            Roteiro Sugerido
+          </h3>
+          <ul class="list-disc ml-6 space-y-1 text-sm" id="lista-rota"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-white border-t mt-auto py-4 text-center text-sm text-gray-500"
+    >
+      © 2025 Goodway. Todos os direitos reservados.
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "login.html";
+      }
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user) window.location.href = "login.html";
+
+      // Planeador logic
+      const form = document.getElementById("form-planeador");
+      const resultado = document.getElementById("resultado-rota");
+      const lista = document.getElementById("lista-rota");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const distancia = document.getElementById("input-distancia").value;
+        const dificuldade = document.getElementById("input-dificuldade").value;
+        const interesses = document.getElementById("input-interesses").value;
+
+        if (!distancia || !dificuldade) {
+          alert("Preenche os campos obrigatórios.");
+          return;
+        }
+
+        const etapas = gerarEtapas(distancia, dificuldade, interesses);
+        lista.innerHTML = etapas.map((etapa) => `<li>${etapa}</li>`).join("");
+        resultado.classList.remove("hidden");
+      });
+
+      function gerarEtapas(distancia, dificuldade, interesses) {
+        return [
+          `Dia 1: Início em Sarria – ${distancia} km`,
+          `Dia 2: Sarria a Portomarín – ${distancia} km`,
+          `Dia 3: Portomarín a Palas de Rei – ${distancia} km`,
+          `Interesses: ${interesses || "Nenhum específico"}`,
+          `Nível: ${
+            dificuldade.charAt(0).toUpperCase() + dificuldade.slice(1)
+          }`,
+        ];
+      }
+    </script>
+  </body>
+</html>

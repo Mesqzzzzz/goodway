@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Goodway - Alojamentos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+    <header class="bg-white shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
+        <nav class="space-x-6">
+          <a href="../app.html" class="text-gray-700 hover:text-blue-600"
+            >Início</a
+          >
+          <a href="planeador.html" class="text-gray-700 hover:text-blue-600"
+            >Planeador</a
+          >
+          <a href="mapa.html" class="text-gray-700 hover:text-blue-600">Mapa</a>
+          <a href="alojamentos.html" class="text-blue-600 font-semibold"
+            >Alojamentos</a
+          >
+          <a href="perfil.html" class="text-gray-700 hover:text-blue-600"
+            >Perfil</a
+          >
+          <button onclick="logout()" class="text-red-600 hover:underline">
+            Sair
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow max-w-4xl mx-auto p-6">
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-blue-600">Alojamentos</h2>
+        <p>
+          Aqui vais poder consultar alojamentos simulados com dados do mock
+          server.
+        </p>
+        <div
+          id="lista-alojamentos"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          <!-- Alojamentos serão carregados aqui -->
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-white border-t mt-auto py-4 text-center text-sm text-gray-500"
+    >
+      © 2025 Goodway. Todos os direitos reservados.
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script type="module">
+      import { obterAlojamentos } from "../mock/server.js";
+
+      const listaEl = document.getElementById("lista-alojamentos");
+
+      obterAlojamentos().then((alojamentos) => {
+        listaEl.innerHTML = alojamentos
+          .map(
+            (a) => `
+            <a href="alojamento.html?id=${a.id}" class="block bg-white shadow rounded p-4 border hover:shadow-md transition">
+              <h3 class="text-xl font-semibold text-blue-600">${a.nome}</h3>
+              <p class="text-sm text-gray-700">Localização: ${a.localizacao}</p>
+              <p class="text-sm text-gray-700">Preço: ${a.preco}</p>
+            </a>
+          `
+          )
+          .join("");
+      });
+
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "login.html";
+      }
+
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user) window.location.href = "login.html";
+    </script>
+  </body>
+</html>

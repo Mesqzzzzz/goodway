@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Goodway App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header class="bg-white shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
+        <nav class="space-x-6">
+          <a href="#" class="text-blue-600 font-semibold">Início</a>
+          <a
+            href="pages/planeador.html"
+            class="text-gray-700 hover:text-blue-600"
+            >Planeador</a
+          >
+          <a href="pages/mapa.html" class="text-gray-700 hover:text-blue-600"
+            >Mapa</a
+          >
+          <a
+            href="pages/alojamentos.html"
+            class="text-gray-700 hover:text-blue-600"
+            >Alojamentos</a
+          >
+          <a href="pages/perfil.html" class="text-gray-700 hover:text-blue-600"
+            >Perfil</a
+          >
+          <button onclick="logout()" class="text-red-600 hover:underline">
+            Sair
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Conteúdo central -->
+    <main
+      class="flex-grow max-w-4xl mx-auto px-4 py-16 flex flex-col justify-center items-center text-center"
+    >
+      <h2 class="text-4xl font-semibold mb-4">Bem-vindo ao Goodway!</h2>
+      <p class="text-lg text-gray-700 max-w-lg">
+        Planeia o teu Caminho de Santiago de forma personalizada, com mapas,
+        alojamentos, e recomendações feitas a pensar em ti.
+      </p>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-white shadow-inner py-4 mt-auto">
+      <div class="max-w-7xl mx-auto text-center text-gray-600 text-sm">
+        &copy; 2025 Goodway. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
