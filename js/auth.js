@@ -14,12 +14,12 @@ document.getElementById("login-form")?.addEventListener("submit", (e) => {
 });
 
 // Em app.html, podemos usar isto para verificar:
-if (
-  window.location.pathname.endsWith("app.html") &&
-  !localStorage.getItem("user")
-) {
-  window.location.href = "login.html";
-}
+// if (
+//   window.location.pathname.endsWith("app.html") &&
+//   !localStorage.getItem("user")
+// ) {
+//   window.location.href = "app.html";
+// }
 function logout() {
   localStorage.removeItem("authToken");
   localStorage.removeItem("authUser");
