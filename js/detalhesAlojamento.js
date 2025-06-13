@@ -3,28 +3,32 @@ import { obterAlojamentoPorId } from "../mock/server.js";
 const params = new URLSearchParams(window.location.search);
 const id = Number(params.get("id"));
 
-const conteudo = document.getElementById("conteudo");
+const nomeEl = document.getElementById("nome");
+const localizacaoEl = document.getElementById("localizacao");
+const precoEl = document.getElementById("preco");
+const descricaoEl = document.getElementById("descricao");
+const galeriaEl = document.getElementById("galeria");
 
 obterAlojamentoPorId(id).then((a) => {
   if (!a) {
-    conteudo.innerHTML = "<p>Alojamento não encontrado.</p>";
+    nomeEl.textContent = "Alojamento não encontrado.";
+    // Opcional: esconder ou limpar os outros campos
+    localizacaoEl.textContent = "";
+    precoEl.textContent = "";
+    descricaoEl.textContent = "";
+    galeriaEl.innerHTML = "";
     return;
   }
 
-  conteudo.innerHTML = `
-    <h1 class="text-3xl font-bold mb-4 text-blue-600">${a.nome}</h1>
-    <p class="text-gray-700 mb-2"><strong>Localização:</strong> ${
-      a.localizacao
-    }</p>
-    <p class="text-gray-700 mb-2"><strong>Preço:</strong> ${a.preco}</p>
-    <p class="text-gray-700 mb-4"><strong>Descrição:</strong> ${a.descricao}</p>
-    <div class="grid grid-cols-2 gap-4">
-      ${a.fotos
-        .map(
-          (foto) =>
-            `<img src="../assets/${foto}" alt="Foto de ${a.nome}" class="rounded shadow">`
-        )
-        .join("")}
-    </div>
-  `;
+  nomeEl.textContent = a.nome;
+  localizacaoEl.textContent = a.localizacao;
+  precoEl.textContent = a.preco;
+  descricaoEl.textContent = a.descricao;
+
+  galeriaEl.innerHTML = a.fotos
+    .map(
+      (foto) =>
+        `<img src="${foto}" alt="Foto de ${a.nome}" class="rounded shadow">`
+    )
+    .join("");
 });

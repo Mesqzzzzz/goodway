@@ -39,6 +39,39 @@
         </h2>
         <form id="form-planeador" class="space-y-4">
           <div>
+            <label class="block text-sm font-medium">Escolhe o Caminho</label>
+            <select id="input-rota" class="w-full p-2 border rounded" required>
+              <option value="">Seleciona uma rota</option>
+              <option value="central">Português Central</option>
+              <option value="costa">Português da Costa</option>
+              <option value="interior">Português Interior</option>
+            </select>
+          </div>
+
+          <div id="grupo-partida-chegada" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium">Ponto de partida</label>
+              <select
+                id="input-partida"
+                class="w-full p-2 border rounded"
+                required
+              >
+                <option value="">–</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Ponto de chegada</label>
+              <select
+                id="input-chegada"
+                class="w-full p-2 border rounded"
+                required
+              >
+                <option value="">–</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- <div>
             <label class="block text-sm font-medium"
               >Distância diária (km)</label
             >
@@ -51,7 +84,8 @@
               placeholder="Ex: 25"
               required
             />
-          </div>
+          </div> -->
+
           <div>
             <label class="block text-sm font-medium"
               >Nível de dificuldade</label
@@ -67,7 +101,8 @@
               <option value="dificil">Difícil</option>
             </select>
           </div>
-          <div>
+
+          <!-- <div>
             <label class="block text-sm font-medium">Interesses</label>
             <input
               id="input-interesses"
@@ -75,7 +110,8 @@
               class="w-full p-2 border rounded"
               placeholder="Ex: natureza, igrejas"
             />
-          </div>
+          </div> -->
+
           <button
             type="submit"
             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
@@ -86,23 +122,43 @@
 
         <div
           id="resultado-rota"
-          class="hidden mt-6 p-4 bg-white shadow rounded border"
+          class="hidden mt-6 p-4 bg-blue-100 border border-blue-300 rounded max-w-4xl mx-auto"
         >
-          <h3 class="text-xl font-semibold mb-2 text-blue-500">
-            Roteiro Sugerido
+          <h3 class="text-xl font-semibold mb-3 text-blue-700">
+            Itinerário Gerado:
           </h3>
-          <ul class="list-disc ml-6 space-y-1 text-sm" id="lista-rota"></ul>
+          <ul id="lista-rota" class="list-disc list-inside text-gray-700"></ul>
         </div>
+
+        <script type="module">
+          import { rotas } from "../mock/etapas.js";
+
+          const selectCaminho = document.getElementById("input-rota");
+          const grupoPartidaChegada = document.getElementById(
+            "grupo-partida-chegada"
+          );
+          const selectPartida = document.getElementById("input-partida");
+          const selectChegada = document.getElementById("input-chegada");
+
+          selectCaminho.addEventListener("change", () => {
+            const caminho = selectCaminho.value;
+            if (!rotas[caminho]) {
+              grupoPartidaChegada.classList.add("hidden");
+              return;
+            }
+
+            grupoPartidaChegada.classList.remove("hidden");
+            const etapas = rotas[caminho]; // array de strings, ex: ["Porto", "Barcelos", ...]
+            const opcoes = etapas; // usamos diretamente o array de strings
+
+            selectPartida.innerHTML = opcoes
+              .map((p) => `<option value="${p}">${p}</option>`)
+              .join("");
+            selectChegada.innerHTML = selectPartida.innerHTML;
+          });
+        </script>
       </section>
     </main>
-
-    <footer
-      class="bg-white border-t mt-auto py-4 text-center text-sm text-gray-500"
-    >
-      © 2025 Goodway. Todos os direitos reservados.
-    </footer>
-
-    <script src="/js/auth.js"></script>
-    <script src="/js/planeador.js"></script>
+    <script type="module" src="../js/planeador.js"></script>
   </body>
 </html>
