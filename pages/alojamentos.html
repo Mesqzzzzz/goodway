@@ -55,24 +55,6 @@
     </footer>
 
     <script src="../js/auth.js"></script>
-    <script type="module">
-      import { obterAlojamentos } from "../mock/server.js";
-
-      const listaEl = document.getElementById("lista-alojamentos");
-
-      obterAlojamentos().then((alojamentos) => {
-        listaEl.innerHTML = alojamentos
-          .map(
-            (a) => `
-            <a href="alojamento.html?id=${a.id}" class="block bg-white shadow rounded p-4 border hover:shadow-md transition">
-              <h3 class="text-xl font-semibold text-blue-600">${a.nome}</h3>
-              <p class="text-sm text-gray-700">Localização: ${a.localizacao}</p>
-              <p class="text-sm text-gray-700">Preço: ${a.preco}</p>
-            </a>
-          `
-          )
-          .join("");
-      });
-    </script>
+    <script type="module" src="../js/alojamentos.js"></script>
   </body>
 </html>

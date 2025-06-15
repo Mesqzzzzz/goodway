@@ -5,10 +5,8 @@ const alojamentos = [
     localizacao: "Portomarín",
     preco: "20€",
     descricao: "Um albergue tradicional com ambiente acolhedor.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/e/e8/Hostel_Dormitory.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOFOjJQ4seERpDlXSfiUNIYYcdRw5j8Vfi1g&s",
-    ],
+    fotos: [],
+    coords: { lat: 42.8224, lng: -7.4629 },
   },
   {
     id: 2,
@@ -16,10 +14,8 @@ const alojamentos = [
     localizacao: "Palas de Rei",
     preco: "25€",
     descricao: "Moderno e confortável, ideal para jovens peregrinos.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Albergue_da_Casa_da_Igrexa.JPG",
-      "https://upload.wikimedia.org/wikipedia/commons/b/bc/Albergue_Peregrino_Interior.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.778, lng: -7.85 },
   },
   {
     id: 3,
@@ -27,10 +23,8 @@ const alojamentos = [
     localizacao: "Melide",
     preco: "18€",
     descricao: "Perfeita para uma noite de descanso tranquila.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/d/dc/Hostel_bunk_beds.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Hostel_Garden_View.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8516, lng: -7.9119 },
   },
   {
     id: 4,
@@ -38,10 +32,8 @@ const alojamentos = [
     localizacao: "Arzúa",
     preco: "22€",
     descricao: "Ambiente familiar com pequeno-almoço incluído.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/7/7e/Spanish_country_house.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/f/fa/Casa_rural_Galicia.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8977, lng: -7.8616 },
   },
   {
     id: 5,
@@ -49,10 +41,8 @@ const alojamentos = [
     localizacao: "O Pedrouzo",
     preco: "24€",
     descricao: "Ideal para relaxar antes da última etapa.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Hotel_room_simple.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/1/13/Pilgrim_hostel_Galicia.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8895, lng: -8.4701 },
   },
   {
     id: 6,
@@ -60,10 +50,8 @@ const alojamentos = [
     localizacao: "Santiago",
     preco: "30€",
     descricao: "Com vista para a Catedral de Santiago.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f0/Monte_do_Gozo_view.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/0/0c/Modern_hostel_facade.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8944, lng: -8.4915 },
   },
   {
     id: 7,
@@ -71,10 +59,8 @@ const alojamentos = [
     localizacao: "Triacastela",
     preco: "19€",
     descricao: "Junto a uma ponte medieval, ambiente rústico.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/e/e5/Old_bridge_village.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/2/23/Rustic_hostel_inside.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8578, lng: -7.9834 },
   },
   {
     id: 8,
@@ -82,10 +68,8 @@ const alojamentos = [
     localizacao: "Sarria",
     preco: "21€",
     descricao: "Muito popular entre os que iniciam o caminho ali.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/e/e9/Hostel_Sarria_outside.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hostel_room_clean.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.7874, lng: -7.4289 },
   },
   {
     id: 9,
@@ -93,10 +77,8 @@ const alojamentos = [
     localizacao: "Palas de Rei",
     preco: "26€",
     descricao: "Conforto superior a preço justo.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f7/Hotel_facade.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/a/a2/Hotel_room_with_window.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.778, lng: -7.85 },
   },
   {
     id: 10,
@@ -104,10 +86,8 @@ const alojamentos = [
     localizacao: "Arzúa",
     preco: "20€",
     descricao: "Simples e prático, ideal para grupos.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/b/be/Hostel_group_room.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hostel_lobby_view.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8977, lng: -7.8616 },
   },
   {
     id: 11,
@@ -115,10 +95,8 @@ const alojamentos = [
     localizacao: "Portomarín",
     preco: "22€",
     descricao: "Ambiente calmo com zona de descanso e jardim.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/9/92/Spanish_hostel_with_garden.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Hostel_courtyard_Galicia.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8224, lng: -7.4629 },
   },
   {
     id: 12,
@@ -126,10 +104,8 @@ const alojamentos = [
     localizacao: "Triacastela",
     preco: "19€",
     descricao: "Vista para as montanhas e pequeno-almoço incluído.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mountain_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/f/f9/Hostel_breakfast_area.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8578, lng: -7.9834 },
   },
   {
     id: 13,
@@ -137,10 +113,8 @@ const alojamentos = [
     localizacao: "Sarria",
     preco: "20€",
     descricao: "Tradicional e acolhedora, perfeita para uma pausa longa.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/e/e2/Traditional_spanish_house.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/ec/Spanish_hostel_room.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.7874, lng: -7.4289 },
   },
   {
     id: 14,
@@ -148,10 +122,8 @@ const alojamentos = [
     localizacao: "Santiago",
     preco: "30€",
     descricao: "Localizado a 10 minutos a pé da Catedral.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Santiago_hostel_facade.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Urban_hostel_room.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8806, lng: -8.5453 },
   },
   {
     id: 15,
@@ -159,10 +131,8 @@ const alojamentos = [
     localizacao: "Arzúa",
     preco: "23€",
     descricao: "Junto a trilhos verdes e em contacto com a natureza.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f8/Hostel_in_forest.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/7/7f/Nature_hostel_balcony.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8977, lng: -7.8616 },
   },
   {
     id: 16,
@@ -170,10 +140,8 @@ const alojamentos = [
     localizacao: "Melide",
     preco: "21€",
     descricao: "Serviço familiar e refeições caseiras disponíveis.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f3/Rural_hostel_with_kitchen.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/4/42/Casa_rural_comedor.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8516, lng: -7.9119 },
   },
   {
     id: 17,
@@ -181,10 +149,8 @@ const alojamentos = [
     localizacao: "O Pedrouzo",
     preco: "24€",
     descricao: "Ambiente moderno e acolhedor para o fim do percurso.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/fb/Modern_hostel_dorm.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Contemporary_hostel_common_area.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8895, lng: -8.4701 },
   },
   {
     id: 18,
@@ -192,10 +158,8 @@ const alojamentos = [
     localizacao: "Palas de Rei",
     preco: "25€",
     descricao: "Arquitetura contemporânea com todos os serviços.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Minimalist_hostel_front.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/a/ab/Modern_bunkbeds_hostel.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.778, lng: -7.85 },
   },
   {
     id: 19,
@@ -203,10 +167,8 @@ const alojamentos = [
     localizacao: "Sarria",
     preco: "20€",
     descricao: "Ideal para grupos e peregrinos solitários.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/5/5a/Spacious_hostel_bunk_room.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/e5/Hostel_common_area.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.7874, lng: -7.4289 },
   },
   {
     id: 20,
@@ -214,10 +176,8 @@ const alojamentos = [
     localizacao: "Triacastela",
     preco: "18€",
     descricao: "Vista panorâmica e ambiente relaxante.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Colina_hostel_view.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/8/8c/Hostel_with_hills_background.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.8578, lng: -7.9834 },
   },
   {
     id: 21,
@@ -225,10 +185,8 @@ const alojamentos = [
     localizacao: "Porto",
     preco: "22€",
     descricao: "No coração da cidade, com fácil acesso ao Caminho.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/1/1d/Porto_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Hostel_Garden_View.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 41.1496, lng: -8.6109 },
   },
   {
     id: 22,
@@ -236,10 +194,8 @@ const alojamentos = [
     localizacao: "Barcelos",
     preco: "21€",
     descricao: "Albergue tradicional junto ao rio Cávado.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f7/Hostel_facade_northern_portugal.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Hostel_courtyard_Galicia.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 41.5382, lng: -8.6156 },
   },
   {
     id: 23,
@@ -247,10 +203,8 @@ const alojamentos = [
     localizacao: "Ponte de Lima",
     preco: "23€",
     descricao: "Junto à ponte romana, muito procurado por peregrinos.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/b/b7/Bridge_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/e5/Hostel_common_area.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 41.7371, lng: -8.6357 },
   },
   {
     id: 24,
@@ -258,10 +212,8 @@ const alojamentos = [
     localizacao: "Valença",
     preco: "24€",
     descricao: "Com vista para a fortaleza histórica.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f0/Valenca_hostel_view.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hostel_lobby_view.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 41.987, lng: -8.8809 },
   },
   {
     id: 25,
@@ -269,10 +221,8 @@ const alojamentos = [
     localizacao: "Tui",
     preco: "20€",
     descricao: "Pousada tranquila no centro histórico de Tui.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/e/e8/Spanish_hostel_tui.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/b/bc/Albergue_Peregrino_Interior.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.0544, lng: -8.6726 },
   },
   {
     id: 26,
@@ -280,10 +230,8 @@ const alojamentos = [
     localizacao: "Redondela",
     preco: "22€",
     descricao: "Ideal para descansar antes de subir a costa.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f8/Redondela_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hostel_room_clean.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.2587, lng: -8.645 },
   },
   {
     id: 27,
@@ -291,10 +239,8 @@ const alojamentos = [
     localizacao: "Pontevedra",
     preco: "25€",
     descricao: "Confortável e moderno, próximo ao centro histórico.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Minimalist_hostel_front.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/a/ab/Modern_bunkbeds_hostel.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.4333, lng: -8.6477 },
   },
   {
     id: 28,
@@ -302,10 +248,8 @@ const alojamentos = [
     localizacao: "Caldas de Reis",
     preco: "23€",
     descricao: "Relaxe nas termas após um longo dia de caminhada.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/5/5e/Caldas_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/7/7f/Nature_hostel_balcony.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.6106, lng: -8.6676 },
   },
   {
     id: 29,
@@ -313,10 +257,8 @@ const alojamentos = [
     localizacao: "Padrón",
     preco: "21€",
     descricao: "Ponto tradicional de paragem dos peregrinos.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Padron_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/2/23/Rustic_hostel_inside.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 42.7332, lng: -8.6506 },
   },
   {
     id: 30,
@@ -325,9 +267,10 @@ const alojamentos = [
     preco: "20€",
     descricao: "Com vista para o Mosteiro de Santa Clara.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/9/92/Vila_do_Conde_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/8/8c/Hostel_with_hills_background.jpg",
+      "https://www.visitviladoconde.pt/thumbs/turismoviladoconde/uploads/geo_article_image/image/782/amvc_138026_albergue_santa_clara_1_1024_2500.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/129489116.jpg?k=de291a6550cbdb408a29d89e7a11c28599034275efb3c75e69cac8c995de0b21&o=",
     ],
+    coords: { lat: 41.3632, lng: -8.747 },
   },
   {
     id: 31,
@@ -335,10 +278,8 @@ const alojamentos = [
     localizacao: "Póvoa de Varzim",
     preco: "22€",
     descricao: "Fica perto da praia e do mercado local.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f3/Povoa_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/f/f9/Hostel_breakfast_area.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 41.3851, lng: -8.7631 },
   },
   {
     id: 32,
@@ -346,10 +287,8 @@ const alojamentos = [
     localizacao: "Viana do Castelo",
     preco: "25€",
     descricao: "Perto do centro e com vista para o Atlântico.",
-    fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/5/5a/Viana_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/7/7e/Spanish_country_house.jpg",
-    ],
+    fotos: [],
+    coords: { lat: 41.6933, lng: -8.8322 },
   },
   {
     id: 33,
@@ -361,6 +300,7 @@ const alojamentos = [
       "https://upload.wikimedia.org/wikipedia/commons/6/6d/Caminha_hostel.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/3/3e/Hostel_Garden_View.jpg",
     ],
+    coords: { lat: 41.868, lng: -8.846 }, // Coordenadas aproximadas de Caminha
   },
   {
     id: 34,
@@ -372,6 +312,7 @@ const alojamentos = [
       "https://upload.wikimedia.org/wikipedia/commons/4/42/Casa_rural_comedor.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/e/e5/Old_bridge_village.jpg",
     ],
+    coords: { lat: 41.871, lng: -8.85 }, // Próximo da zona de travessia em Caminha
   },
   {
     id: 35,
@@ -383,6 +324,7 @@ const alojamentos = [
       "https://upload.wikimedia.org/wikipedia/commons/f/f8/Hostel_in_forest.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/f/f3/Rural_hostel_with_kitchen.jpg",
     ],
+    coords: { lat: 42.001, lng: -8.841 }, // Mougás, perto da costa
   },
   {
     id: 36,
@@ -394,6 +336,7 @@ const alojamentos = [
       "https://upload.wikimedia.org/wikipedia/commons/a/a2/Hotel_room_with_window.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/c/cf/Urban_hostel_room.jpg",
     ],
+    coords: { lat: 42.24, lng: -8.72 }, // Vigo centro aproximado
   },
   {
     id: 37,
@@ -405,6 +348,7 @@ const alojamentos = [
       "https://upload.wikimedia.org/wikipedia/commons/e/e2/Traditional_spanish_house.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/e/e8/Hostel_Dormitory.jpg",
     ],
+    coords: { lat: 40.661, lng: -7.916 }, // Viseu centro aproximado
   },
   {
     id: 38,
@@ -416,6 +360,7 @@ const alojamentos = [
       "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hostel_room_clean.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/4/4c/Albergue_da_Casa_da_Igrexa.JPG",
     ],
+    coords: { lat: 40.209, lng: -8.423 }, // Coimbra centro aproximado
   },
   {
     id: 39,
@@ -427,6 +372,7 @@ const alojamentos = [
       "https://upload.wikimedia.org/wikipedia/commons/1/1c/Santiago_hostel_facade.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/2/2e/Hostel_courtyard_Galicia.jpg",
     ],
+    coords: { lat: 42.8806, lng: -8.5453 }, // Santiago de Compostela centro (coordenadas já indicadas anteriormente)
   },
 ];
 
