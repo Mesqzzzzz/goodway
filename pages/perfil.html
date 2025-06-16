@@ -30,7 +30,7 @@
       </div>
     </header>
 
-    <main id="conteudo" class="flex-grow max-w-4xl mx-auto p-6">
+    <main id="conteudo" class="flex-grow max-w-4xl mx-auto p-6 space-y-8">
       <section class="space-y-4">
         <h2 class="text-2xl font-bold text-blue-600">O Meu Perfil</h2>
         <p>Verifica o teu progresso, conquistas e estatísticas da jornada.</p>
@@ -40,6 +40,36 @@
           <li>0 conquistas desbloqueadas</li>
         </ul>
       </section>
+
+      <section id="secao-equipamentos" class="p-4 bg-white rounded shadow">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">
+          Equipamentos para o Caminho
+        </h2>
+        <ul id="lista-equipamentos" class="space-y-2"></ul>
+      </section>
+      <!-- Modal Dicas -->
+      <div
+        id="modal-dicas"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <div class="bg-white rounded shadow-lg max-w-md w-full p-6 relative">
+          <h3
+            id="modal-titulo"
+            class="text-xl font-bold mb-4 text-blue-600"
+          ></h3>
+          <p id="modal-conteudo" class="mb-6 text-gray-700"></p>
+          <button
+            id="modal-fechar"
+            class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 focus:outline-none"
+            aria-label="Fechar dicas"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer
@@ -49,5 +79,6 @@
     </footer>
 
     <script src="/js/auth.js"></script>
+    <script type="module" src="../js/perfil.js"></script>
   </body>
 </html>
