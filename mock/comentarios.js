@@ -547,8 +547,11 @@ export const comentarios = [
   },
 ];
 
-export function obterComentariosPorAlojamento(id) {
-  return Promise.resolve(
-    comentarios.filter((c) => c.alojamentoId === Number(id))
-  );
+export async function obterComentariosPorAlojamento(idAlojamento) {
+  // Filtra os comentários que têm alojamentoId igual ao id passado
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(comentarios.filter((c) => c.alojamentoId === idAlojamento));
+    }, 100); // simula atraso assíncrono
+  });
 }

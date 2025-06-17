@@ -5,7 +5,12 @@ const alojamentos = [
     localizacao: "Portomarín",
     preco: "20€",
     descricao: "Um albergue tradicional com ambiente acolhedor.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440960876.jpg?k=5c8ff0ef13be9cc98695e642b911d37c5d8c1997bc1677a84c6a1d11209eb81c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440957753.jpg?k=9c8509afb63785724af393142aeb4c636d85687da4b72caaaf314a9d98fc8bd1&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440963299.jpg?k=1d51426dea85bf747db1f8d2783d22cbe73d78ca8cc341079158d119d16b7f0b&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440962544.jpg?k=8bd5569d480b26dfc6d5116bff145b82e79e9cc922d979ded6d51d974a3fb869&o=",
+    ],
     coords: { lat: 42.8224, lng: -7.4629 },
   },
   {
@@ -14,7 +19,12 @@ const alojamentos = [
     localizacao: "Palas de Rei",
     preco: "25€",
     descricao: "Moderno e confortável, ideal para jovens peregrinos.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/484212254.jpg?k=e3d53f60b3c57d4abbbd5b0a1894432c806b579c756510cf1ab359155924161d&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/484212428.jpg?k=b14ac295d19a135717c11f58c9f6162463183947fa2ff05ff2cfb35f3ec66ea9&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/484212551.jpg?k=0e729c573aa6a7d9d30ee95ff4c5c7ec1bd5e3d41142617f2c0641c2dcb8c784&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/484212231.jpg?k=d48a67e7801d8ffaa7137f58b99696e735e15af41c26428f0d6e16c4314b5f25&o=",
+    ],
     coords: { lat: 42.778, lng: -7.85 },
   },
   {
@@ -23,7 +33,12 @@ const alojamentos = [
     localizacao: "Melide",
     preco: "18€",
     descricao: "Perfeita para uma noite de descanso tranquila.",
-    fotos: [],
+    fotos: [
+      "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151266~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+      "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180645~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+      "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180643~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+      "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180647~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+    ],
     coords: { lat: 42.8516, lng: -7.9119 },
   },
   {
@@ -32,7 +47,12 @@ const alojamentos = [
     localizacao: "Arzúa",
     preco: "22€",
     descricao: "Ambiente familiar com pequeno-almoço incluído.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/184473802.jpg?k=f31da65a7445ab0cab27544686546765c8ca6e2a4717c3423fc5d7e09ac2bf18&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/184474195.jpg?k=754c22946c84c5d78fcdbfbd9f5aa41943b9080f11805f95eaf8a3246758c1ca&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/184310885.jpg?k=8e044081c40badabf1ba219aa16eb706780d2eee7ae1d7e30eba77e6f4c7e871&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/184474717.jpg?k=54600be394bb2c25ebb71702b7f070a185b5220c20627268fb9c43fc0ff0b4d9&o=",
+    ],
     coords: { lat: 42.8977, lng: -7.8616 },
   },
   {
@@ -41,7 +61,12 @@ const alojamentos = [
     localizacao: "O Pedrouzo",
     preco: "24€",
     descricao: "Ideal para relaxar antes da última etapa.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/200145141.jpg?k=49fe432a8422cfc46fb31bcc384fa64c50062a75badce603c246937ccfbf09d5&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370391206.jpg?k=f3b4afdaf02611e6ed8fc5347b18946e6972c7d45732bfa7a37dd224a974823e&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/256668985.jpg?k=5b793432baa6d141189a93556fb091a7ddb269af49455eea1ad5c5546c4a4429&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370385935.jpg?k=f821cbf40ff1a7a2ef0696ce531d294e4ec7fcc5848ce60b7907cf1a067628ee&o=",
+    ],
     coords: { lat: 42.8895, lng: -8.4701 },
   },
   {
@@ -50,7 +75,12 @@ const alojamentos = [
     localizacao: "Santiago",
     preco: "30€",
     descricao: "Com vista para a Catedral de Santiago.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/100432621.jpg?k=a372d02c0905b659e8e9542b46cbeec644fd62a08075191a279f88854597ead0&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/140697658.jpg?k=c66ab665fa375f7e2173778b53756c0d724d027a692c6bfeee67f5c38dc72bed&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/100433750.jpg?k=9506aab0e404ec71096074404e0eb42e4bf98a8b873885b333d4001633b3a574&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/189433138.jpg?k=8ca10989c8377811e5befa9830c856cbfeed2b625a6e39619acb1795ee0d6f0f&o=",
+    ],
     coords: { lat: 42.8944, lng: -8.4915 },
   },
   {
@@ -59,7 +89,12 @@ const alojamentos = [
     localizacao: "Triacastela",
     preco: "19€",
     descricao: "Junto a uma ponte medieval, ambiente rústico.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/518713749.jpg?k=30267a009a8f0e0d912237d3e32f36b1ac9f2185d04ae821be7a0246b7f668fb&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/518713751.jpg?k=d293a85690c59553165afee231ac302a0b60b48bcbda76ff3a989110c6afdf43&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/518713736.jpg?k=a2e1e6856e6192464257d95c7c48a15bcf0f58ec935056b5d1c18636ef587da0&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/520173635.jpg?k=8e04cbef67c0976650b495b990a2904bceb81729a37f53f2e498c4f425b91d90&o=",
+    ],
     coords: { lat: 42.8578, lng: -7.9834 },
   },
   {
@@ -68,7 +103,10 @@ const alojamentos = [
     localizacao: "Sarria",
     preco: "21€",
     descricao: "Muito popular entre os que iniciam o caminho ali.",
-    fotos: [],
+    fotos: [
+      "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151267~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+      "http://www.turismo.gal/imaxes/mdaw/mjuz/~edisp/~extract/TURGA253633~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+    ],
     coords: { lat: 42.7874, lng: -7.4289 },
   },
   {
@@ -77,7 +115,12 @@ const alojamentos = [
     localizacao: "Palas de Rei",
     preco: "26€",
     descricao: "Conforto superior a preço justo.",
-    fotos: [],
+    fotos: [
+      "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/248855277.jpg?k=c9a94e604a33c144c0312696baea206e819e8d88d1ce40085269f8526f8cde0d&o=&s=1024x",
+      "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/310252934.jpg?k=aa34d29e3ebb775f8476178392e8fa44590727125a9a535e8e3b759d7527a1bd&o=&s=1024x",
+      "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/261672696.jpg?k=de56136555d69b3d426909f4c2a6d8db5a5a9caad032094017a28b992e27ffbd&o=&s=1024x",
+      "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/248856787.jpg?k=34e5d51714fc523b15cd3087821cfdc758c21d6c910b306372dca34131c25d4e&o=&s=1024x",
+    ],
     coords: { lat: 42.778, lng: -7.85 },
   },
   {
@@ -86,7 +129,12 @@ const alojamentos = [
     localizacao: "Arzúa",
     preco: "20€",
     descricao: "Simples e prático, ideal para grupos.",
-    fotos: [],
+    fotos: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/cd/03/cd/terraza-exterior.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/cd/03/94/pension-ribadiso.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/7b/4b/2c/photo2jpg.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/28/0c/a9/the-pension-back-lawn.jpg?w=1000&h=-1&s=1",
+    ],
     coords: { lat: 42.8977, lng: -7.8616 },
   },
   {
@@ -95,7 +143,12 @@ const alojamentos = [
     localizacao: "Portomarín",
     preco: "22€",
     descricao: "Ambiente calmo com zona de descanso e jardim.",
-    fotos: [],
+    fotos: [
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no7Zqv9f7zS9h2oEjilBTmcHmmdxxyYbf9Nmh402vXZyaqBSREeYmAndwnv3R6B9M6dCKfD_MRe6Y7HkLUBgpSioVOCzZnQpYBwNBpNb0ck59ckCmqkY1Tqa1fHuJ6dRnMtz4V0Xg=s680-w680-h510-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqxE-SCkdag9wNN3rxq4ERwOb0TpyeC7ShpeX67Li62f0CEOM17qRN4gJGisC0xXInxO-YjkwAwHEdSMe5wtiagauDDv9qGGJM4slH_9QZXv4rh96fyXYWvtO79LtlBOsv79Vo=s680-w680-h510-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nptg-JFtn1dMCibSht9BseRRxZPc5LwQvYxAs3mX7dfFpLsullMWhdWltSxYiPTiFfpdLdqs-2Lpcf1jf0JJ68WllYRzv_IuOk_qHjU1eEGOH8wP4SkAKMcwgvNTwCUDSluOlFQdQ=s680-w680-h510-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrywXRUbrRQgbmroyEHlbZjUjl1MSL9VXt5f3QKx6-0WP1CCnhfzgIagnDoQeOMqw0cp60IW5BByh_9qVIjfXnHXekW-6EWOvUeQxbTS5glMgVQLPEzfcdup8JzTqsLE17C1dU=s680-w680-h510-rw",
+    ],
     coords: { lat: 42.8224, lng: -7.4629 },
   },
   {
@@ -104,7 +157,12 @@ const alojamentos = [
     localizacao: "Triacastela",
     preco: "19€",
     descricao: "Vista para as montanhas e pequeno-almoço incluído.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/471117828.jpg?k=020582a43c13b5c21bd062c6daa8bd3a7066fc459bc4ac59cbd9525815ebf10f&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/471119231.jpg?k=a40977fd217a2269f69affe34f6640b46a10c457d7c83540e21dc72fad3b265a&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/471119182.jpg?k=164f808b357e09011a1d4f89d8027b936a8786f601786baf53559aa67b4e205c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/471119206.jpg?k=074f81f0e0e6e4bbc3dda51f985b6daff9ee4ddf346b9fda72e5ae0163fe42e8&o=",
+    ],
     coords: { lat: 42.8578, lng: -7.9834 },
   },
   {
@@ -113,7 +171,12 @@ const alojamentos = [
     localizacao: "Sarria",
     preco: "20€",
     descricao: "Tradicional e acolhedora, perfeita para uma pausa longa.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/141315156.jpg?k=4bf8dcb46515b69123f314a7dc6fc27e0466b8e3502c4ed018e694809554dd11&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/141306960.jpg?k=6ec58049f3634fc98e32489b526cd6648c75f241fb33e976bed62e5980950a15&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/287416568.jpg?k=27a82b7f59d98e28762babe08b8be98804661667b7e382e4ce1db4ab4bfe4b38&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/141309418.jpg?k=42e47ee741673b0e9c972040353ac1c1b61c62f4f4cab885a11e5ba3eb3c5a23&o=",
+    ],
     coords: { lat: 42.7874, lng: -7.4289 },
   },
   {
@@ -122,7 +185,12 @@ const alojamentos = [
     localizacao: "Santiago",
     preco: "30€",
     descricao: "Localizado a 10 minutos a pé da Catedral.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92660096.jpg?k=3c05947d14b1506070a4ddc9b176ef496af0a50b8390058ac3524f3b36906e7a&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/210987005.jpg?k=93d620f7d8d6de6a9440d4c79b34cd6c67344ed216dd814d79ab0dc4fc6c8d2f&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92024803.jpg?k=315915592de81e789eb157aac13fdc590dff11b8de6a9d7a14304272dc8760a3&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/211058579.jpg?k=59accfb8798ac3c650969ee8b9bea72c0def245681abfb6086eeafc4607b0242&o=",
+    ],
     coords: { lat: 42.8806, lng: -8.5453 },
   },
   {
@@ -131,7 +199,11 @@ const alojamentos = [
     localizacao: "Arzúa",
     preco: "23€",
     descricao: "Junto a trilhos verdes e em contacto com a natureza.",
-    fotos: [],
+    fotos: [
+      "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151254~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+      "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151255~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+      "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180635~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+    ],
     coords: { lat: 42.8977, lng: -7.8616 },
   },
   {
@@ -140,7 +212,12 @@ const alojamentos = [
     localizacao: "Melide",
     preco: "21€",
     descricao: "Serviço familiar e refeições caseiras disponíveis.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/56928811.jpg?k=1ccf1c49ff35dc5ea33d0cc02d4cfb121241c53efd5a4d20d9d8f0b49723b676&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/468083480.jpg?k=7ec0ef673cbf5fc4458530738fdb2e924e9e8c97a4329634aa585be49ee944d5&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/427519651.jpg?k=b31d70d0181d35a8011de8d243d3ab14f41d9264fe2c4991602c1a154662a64d&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/195654329.jpg?k=e45ae5adcf1a414b6d826a37216b797763aaa163b52870996c153c332e9e35f7&o=",
+    ],
     coords: { lat: 42.8516, lng: -7.9119 },
   },
   {
@@ -149,7 +226,12 @@ const alojamentos = [
     localizacao: "O Pedrouzo",
     preco: "24€",
     descricao: "Ambiente moderno e acolhedor para o fim do percurso.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/256124662.jpg?k=1b38daa0e7f5a6ab36fb425aebc08992471085c22051959f9aca65e75f0cac97&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/256124618.jpg?k=3cf73b17151075dbdc1ccc645382ac608eee49946167a9a328eaeddedb57e15e&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/65378905.jpg?k=045afc60bdb17f835071232e7821d3d5ebc646e1d0fd70da8561a2ca7c650278&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/256124647.jpg?k=3ac03f41d0b08e865280583f1f017073c2f50b308df5b8f95a63e71a45f14c41&o=",
+    ],
     coords: { lat: 42.8895, lng: -8.4701 },
   },
   {
@@ -158,7 +240,12 @@ const alojamentos = [
     localizacao: "Palas de Rei",
     preco: "25€",
     descricao: "Arquitetura contemporânea com todos os serviços.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/148404537.jpg?k=3e794f3e3fd8d2674532a6200ca4c8740752c42c68a4c526307b6b01db9cba2c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/146915144.jpg?k=f671a98cee51daf61b0f59310518821fe17f3aeb8ae5274d04fbf1243a31fa50&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/148404601.jpg?k=ef0e1a5126775b9ff917c806a73977a545cc27a62ec6b92c147930559e82619c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/146914996.jpg?k=0911cd93a4e285c8f098cd7bebeac8d1483184bd17bced0e02ddbde46fc972ad&o=",
+    ],
     coords: { lat: 42.778, lng: -7.85 },
   },
   {
@@ -167,7 +254,12 @@ const alojamentos = [
     localizacao: "Sarria",
     preco: "20€",
     descricao: "Ideal para grupos e peregrinos solitários.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/30156220.jpg?k=40f8d5680c75319d2547877c7a6d4c9a630a522de23ee5a2763b6ac06df48265&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/92242367.jpg?k=0fa7c5301d5b9877d4272a11bb7be90831cfd48ec76db234c18a3a71a92a247a&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/260407107.jpg?k=d9241bbb901c8c3b3b4b6cd56850451496a1ece983aaf0afe5391be26a6e7986&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/30156213.jpg?k=29551341dd7bdc00bf009f734b066ef4497d65c3ccf03067fae8b46a46b8c623&o=",
+    ],
     coords: { lat: 42.7874, lng: -7.4289 },
   },
   {
@@ -176,7 +268,12 @@ const alojamentos = [
     localizacao: "Triacastela",
     preco: "18€",
     descricao: "Vista panorâmica e ambiente relaxante.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/667882939.jpg?k=bc4d0f057d6af041dbc60124071ea0aa8c425161a5fadb684b96821fee23442a&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/667882879.jpg?k=b15afeb8795b4a50f1233934c3b0688bcc5863337e480024b9935c757e4ed9d5&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/471658618.jpg?k=6ba6bb82f0caa66590575f9c4afaa16dbecbbe1963ba3de8debbf0154ee38339&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/552324467.jpg?k=2abd7a6c9959e6b3bde2a82840025edc1d2c3a9660a69a6e74eb6099bcd1f050&o=",
+    ],
     coords: { lat: 42.8578, lng: -7.9834 },
   },
   {
@@ -185,7 +282,12 @@ const alojamentos = [
     localizacao: "Porto",
     preco: "22€",
     descricao: "No coração da cidade, com fácil acesso ao Caminho.",
-    fotos: [],
+    fotos: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/2a/5d/1c/check-in-with-ease-at.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/d6/2f/bc/double-room-with-sofa.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/13/b1/2c/lobby-lounge.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/d6/2f/dc/restaurant-bar-area.jpg?w=1000&h=-1&s=1",
+    ],
     coords: { lat: 41.1496, lng: -8.6109 },
   },
   {
@@ -194,7 +296,12 @@ const alojamentos = [
     localizacao: "Barcelos",
     preco: "21€",
     descricao: "Albergue tradicional junto ao rio Cávado.",
-    fotos: [],
+    fotos: [
+      "https://www.oficinasdacasa.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-02-at-19.54.15.jpeg",
+      "https://www.oficinasdacasa.com/wp-content/uploads/2024/12/Barcelos2024-1.jpg",
+      "https://www.oficinasdacasa.com/wp-content/uploads/2024/12/Barcelos2024-15.jpg",
+      "https://www.oficinasdacasa.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-02-at-19.54.15.jpeg",
+    ],
     coords: { lat: 41.5382, lng: -8.6156 },
   },
   {
@@ -203,7 +310,12 @@ const alojamentos = [
     localizacao: "Ponte de Lima",
     preco: "23€",
     descricao: "Junto à ponte romana, muito procurado por peregrinos.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/487605257.jpg?k=3f5b37075ddd50fb9134847c5db167b160ef2e31307c655ac5b818dd6f10d4ea&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/487605301.jpg?k=a838890fee6fd18c13d930b60e0a9d043f758b815f3a002a32fffbd49c0f8a0f&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/487605322.jpg?k=1b170d196f70a06b0f15d7f5972383e302b592e27cc3ae5dcf496e8a3005b405&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/487605299.jpg?k=0467d3fa0f7bc0b75ecc8f10e0f7492a6fceb76215c5cc65e2567d80f9aaf992&o=",
+    ],
     coords: { lat: 41.7371, lng: -8.6357 },
   },
   {
@@ -212,7 +324,12 @@ const alojamentos = [
     localizacao: "Valença",
     preco: "24€",
     descricao: "Com vista para a fortaleza histórica.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/262913594.jpg?k=f4aa540350b3ffc3f8a6627245b326a7d5d917fd77e2693b237a1c4b85f1ac56&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/200327710.jpg?k=5c7065c6cbaef55b975981eb142e62db4873aec0e2949c9b2cf9e3c744a816b3&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/481917414.jpg?k=270e2e318c5e89e98935b3c5ff6ac660d1a2ed3ecd951efa44522a61930c520b&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/481917421.jpg?k=05ffadad5de309bfc0c376bcd6a2349564b5981b257a3e77243ac5d5b35c0bd8&o=",
+    ],
     coords: { lat: 41.987, lng: -8.8809 },
   },
   {
@@ -221,7 +338,12 @@ const alojamentos = [
     localizacao: "Tui",
     preco: "20€",
     descricao: "Pousada tranquila no centro histórico de Tui.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/4096581.jpg?k=698714e0c52054cafb1426c25d7cc46bc099c13cc915ab0931e385dffe424ca9&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/3352798.jpg?k=5b4aed4c06c47459d279ca724f638c757e07db1d75c027e56f9b74263d60d727&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/4096311.jpg?k=ebf46e0db6db84d2723dea162d70b2ee613cf9c515c5fd405a5a24c2bff7758d&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/4096746.jpg?k=834d1691c7c86c60939fea095c3a576d85b84fd24692c26e47f3019a32e59ede&o=",
+    ],
     coords: { lat: 42.0544, lng: -8.6726 },
   },
   {
@@ -230,7 +352,12 @@ const alojamentos = [
     localizacao: "Redondela",
     preco: "22€",
     descricao: "Ideal para descansar antes de subir a costa.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/536502405.jpg?k=8eec1eb83900f514bd277b1c9dca0d87d786c6e91cd60cdebfeabfb2dcfcd325&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/536502419.jpg?k=69bcd64f0ec656b31a7186fe9cffaeaf799ae29ed8fc6e91b60329b50cb1ceb8&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/151979901.jpg?k=f6a840973bdcd2c3a6b5f1aa1d36c6cdab0f3d61f1251fa53b066146bcef1555&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/443054054.jpg?k=926de3864c239603d77c41261378e6c0fb7d9f5ab9a7eaa6d3c50f8d8d5c5967&o=",
+    ],
     coords: { lat: 42.2587, lng: -8.645 },
   },
   {
@@ -239,7 +366,12 @@ const alojamentos = [
     localizacao: "Pontevedra",
     preco: "25€",
     descricao: "Confortável e moderno, próximo ao centro histórico.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/10362816.jpg?k=459f8a33df2a179da4146fbb3784eafe28ecb1a2603dfe799b51ef1914b9d05a&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/149658912.jpg?k=3279faca287c6fdd0d85025f0d46f7fda4f39cdf38c1723ef7942ca000ff5f70&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/173934380.jpg?k=15c0da12c81471f6b3bc721f1651a879d0cf6f565820667170092bb06a6d5409&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/22462873.jpg?k=3a3fc9cd108c2f26119e1a8700385f0c173f007dfa853e8147b31b36f58b9ab3&o=",
+    ],
     coords: { lat: 42.4333, lng: -8.6477 },
   },
   {
@@ -248,7 +380,12 @@ const alojamentos = [
     localizacao: "Caldas de Reis",
     preco: "23€",
     descricao: "Relaxe nas termas após um longo dia de caminhada.",
-    fotos: [],
+    fotos: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ee/71/db/caption.jpg?w=900&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ee/71/da/caption.jpg?w=900&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ee/71/d8/caption.jpg?w=900&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ee/71/d6/caption.jpg?w=1000&h=-1&s=1",
+    ],
     coords: { lat: 42.6106, lng: -8.6676 },
   },
   {
@@ -257,7 +394,12 @@ const alojamentos = [
     localizacao: "Padrón",
     preco: "21€",
     descricao: "Ponto tradicional de paragem dos peregrinos.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/585417544.jpg?k=a49991996ebc3bc812c18940151ad3af5ef75c31aafd97f022011ede1a292b0c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/493776107.jpg?k=6b455437ae68f4ea765baf628fc0e3878ce0793cfb621a7ed1934c292888cdb1&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/493557371.jpg?k=c6339de6c0ea398017c6b70343ad4ca75e33ff43c66446137044de4dd481aa2b&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/493557325.jpg?k=3fbedffd482370d9132d024b8c5363bc0bcfae4be838c04b3702d5975aae2296&o=",
+    ],
     coords: { lat: 42.7332, lng: -8.6506 },
   },
   {
@@ -267,8 +409,10 @@ const alojamentos = [
     preco: "20€",
     descricao: "Com vista para o Mosteiro de Santa Clara.",
     fotos: [
-      "https://www.visitviladoconde.pt/thumbs/turismoviladoconde/uploads/geo_article_image/image/782/amvc_138026_albergue_santa_clara_1_1024_2500.jpg",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/129489116.jpg?k=de291a6550cbdb408a29d89e7a11c28599034275efb3c75e69cac8c995de0b21&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/584040321.jpg?k=cb4c6eb39ee6a3fde62e6c1d7db58df7aa9d4fc0bfea9657470ebc1bccb1cb73&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/563408955.jpg?k=b342b4f33a30f2863a651c8bf3eec8ab9c93d54c4083d37e47d18adf8871c99a&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/584040329.jpg?k=3bc1b20f2bf6d859c153b10f456a59d1bb653f3d8211ffb90ea48cb2f18e396b&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/584040351.jpg?k=ead753144c153e8a8bbf7fa8da76e4c20465e98f54f53dbdf4c7949ab66bbab4&o=",
     ],
     coords: { lat: 41.3632, lng: -8.747 },
   },
@@ -278,7 +422,12 @@ const alojamentos = [
     localizacao: "Póvoa de Varzim",
     preco: "22€",
     descricao: "Fica perto da praia e do mercado local.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/103534260.jpg?k=6d8596011d408e84e36442c8a184fc50914aec1959d41c5c6d66f3592afe236c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/103533862.jpg?k=c80c18f214d883cafac2c21afb7ce58f52bcf0897d81baaaa6f7f01d37bddde1&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261405013.jpg?k=7e49878dde4b83c91b636d9dbb66c7c31a449445a77e3693406e59b15632a5c4&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/103536223.jpg?k=d3e7ba2a7992ba58146ab985fc0b170c178ed92912329c2e3c8b5874ff05bbcb&o=",
+    ],
     coords: { lat: 41.3851, lng: -8.7631 },
   },
   {
@@ -287,7 +436,12 @@ const alojamentos = [
     localizacao: "Viana do Castelo",
     preco: "25€",
     descricao: "Perto do centro e com vista para o Atlântico.",
-    fotos: [],
+    fotos: [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/226673355.jpg?k=3bb0c3a5cd8970a20bee18701f5eddf62249f46f6d39e07ef36c6172f1535f0c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/690003530.jpg?k=4e27ac240b630d307038f8a00519b96ea2ef44c03d231935293d6c2d5107cffe&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/75442029.jpg?k=010e10ace39c2df385a3d87d09b77f9376c978e07df5b86dc03b9282dd6daa36&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/75441943.jpg?k=fc1233fbca9934a6fb7b278369ed29a64c2c978326178947177aad79b007178c&o=",
+    ],
     coords: { lat: 41.6933, lng: -8.8322 },
   },
   {
@@ -297,8 +451,10 @@ const alojamentos = [
     preco: "21€",
     descricao: "Ideal para quem atravessa o rio Minho.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Caminha_hostel.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Hostel_Garden_View.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/367170463.jpg?k=776063e33355829a09362b2fbd02828eebc39da5cde1a9c3a8b6cd018cbfb0b4&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/367170102.jpg?k=7aa144a5bbf7237c40c39a94af9d8cb4ddb53463beef4d84508f2c4eda89b079&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/339083602.jpg?k=cd6fbe93d1c2ab6c3d9313cdfeb16d345866046e8f142e300e69c7977f629a80&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/224819309.jpg?k=d09cede5ed3c3a63706b1083946eb88ddc947b1cefa0751e7657b520c2cc3c3c&o=",
     ],
     coords: { lat: 41.868, lng: -8.846 }, // Coordenadas aproximadas de Caminha
   },
@@ -309,8 +465,10 @@ const alojamentos = [
     preco: "18€",
     descricao: "Pousada simples junto ao ponto de travessia.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/4/42/Casa_rural_comedor.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/e5/Old_bridge_village.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/05/37/10/historia-tradicao-e-inovacao.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/05/37/0f/historia-tradicao-e-inovacao.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/05/37/0d/historia-tradicao-e-inovacao.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/05/36/89/onde-a-tradicao-se-junta.jpg?w=1000&h=-1&s=1",
     ],
     coords: { lat: 41.871, lng: -8.85 }, // Próximo da zona de travessia em Caminha
   },
@@ -321,8 +479,10 @@ const alojamentos = [
     preco: "20€",
     descricao: "Alojamento rústico perto do mar.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f8/Hostel_in_forest.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/f/f3/Rural_hostel_with_kitchen.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/28/95/c8/camping-mougas.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/28/96/5c/camping-mougas.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/28/95/fd/camping-mougas.jpg?w=1000&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/cd/6d/83/vista-de-los-bungalow.jpg?w=1000&h=-1&s=1",
     ],
     coords: { lat: 42.001, lng: -8.841 }, // Mougás, perto da costa
   },
@@ -333,8 +493,10 @@ const alojamentos = [
     preco: "26€",
     descricao: "No centro de Vigo, ideal para turistas e peregrinos.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/a/a2/Hotel_room_with_window.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Urban_hostel_room.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/476703696.jpg?k=c77599e0c08946e6bed445e843a4456e27372254933567971b0c43bd215a99cf&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/477568825.jpg?k=1ef83cc8c3cac7f9cbd867cb979cb25cb34b6b83688298d4343bca39697f42e8&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/477567755.jpg?k=9eff757aa3919541811a1979ae90b2e6c9946e87b2556b588738554174ac38e0&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/487095586.jpg?k=c99510cd7713cca64783c6565bd95c8a3de9f17d96eb67874a855349061f260e&o=",
     ],
     coords: { lat: 42.24, lng: -8.72 }, // Vigo centro aproximado
   },
@@ -345,8 +507,10 @@ const alojamentos = [
     preco: "23€",
     descricao: "Fácil acesso ao início da rota do Caminho Interior.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/e/e2/Traditional_spanish_house.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/e8/Hostel_Dormitory.jpg",
+      "https://cdn1.ximocrm.com/i/98835747-8AA4-419A-83D4-FD8714A744DA_30899_0______aebac448-93fd-4a50-b7a9-e76308e35a85.jpg",
+      "https://cdn1.ximocrm.com/i/98835747-8AA4-419A-83D4-FD8714A744DA_30899_0______a64192b4-d108-4b59-a760-50b6fae2511a.jpg",
+      "https://cdn1.ximocrm.com/i/98835747-8AA4-419A-83D4-FD8714A744DA_30899_0______5d9b3ec9-e881-4cf9-9b4c-7f3e92206e5a.jpg",
+      "https://cdn1.ximocrm.com/i/98835747-8AA4-419A-83D4-FD8714A744DA_30899_0______5c272fcb-5042-43f2-b346-0761dc248d7b.jpg",
     ],
     coords: { lat: 40.661, lng: -7.916 }, // Viseu centro aproximado
   },
@@ -357,8 +521,10 @@ const alojamentos = [
     preco: "24€",
     descricao: "Junto ao rio Mondego, excelente para pernoitar.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hostel_room_clean.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Albergue_da_Casa_da_Igrexa.JPG",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/314301995.jpg?k=f770f99acb180059d439393f81a08e0332e7fc2373425358620ff16869f59eca&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/316180494.jpg?k=030b0f1d5bde2bdaf1f64abb62da1caed7076d22206f7bc5361f1e4d210e9c2c&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/314300257.jpg?k=bfa5a17f18e4de47d5ba2ed67ab39ad025027c020f79a7f17b29614c1ef62d9a&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/314301104.jpg?k=435451fec92ff6b6a50e74f33062ec316988bd9fa454ea920c0b8d16be2e845a&o=",
     ],
     coords: { lat: 40.209, lng: -8.423 }, // Coimbra centro aproximado
   },
@@ -369,8 +535,10 @@ const alojamentos = [
     preco: "28€",
     descricao: "A poucos minutos da Praça do Obradoiro.",
     fotos: [
-      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Santiago_hostel_facade.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Hostel_courtyard_Galicia.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/64022654.jpg?k=5bb080126cb263f7a7544cdfebc2808b46ab132afb5a6f941ae93fbe1f1f09af&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/436299163.jpg?k=45520bb045cb67032614768242a1a28d5f45577f757decb9a9fe8aff61995b34&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/64010047.jpg?k=f959cd970650b679c8fc5764b5732f16ecdebe7bf4ee7ed1a3a0ced833ed640d&o=",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/438304038.jpg?k=3d9f8940ddd1934d12a71ef9084c88f9a68bbd1fcfd5b4cf2572dd22c887406d&o=",
     ],
     coords: { lat: 42.8806, lng: -8.5453 }, // Santiago de Compostela centro (coordenadas já indicadas anteriormente)
   },
