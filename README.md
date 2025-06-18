@@ -1,107 +1,103 @@
-# Goodway - Sistema Inteligente de Planeamento do Caminho de Santiago
 
-## 📚 Projeto Académico
-**Licenciatura em Tecnologias e Sistemas de Informação para a Web**  
-**Projeto I**  
-**Escola Superior de Media Artes e Design - Politécnico do Porto**  
-**Ano Letivo:** 2024/2025  
+# 🌄 Goodway — Planeador Personalizado do Caminho de Santiago
 
-**Grupo 19:**  
-- André Lemos – 40240174  
-- Francisco Mesquita – 40220298  
-- José Guimarães – 40240191  
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![LocalStorage](https://img.shields.io/badge/Web%20Storage-LocalStorage-blue?style=flat)
 
-**Docentes:**  
-- Mário Paulo Teixeira Pinto  
-- António Francisco da Costa Machado  
-- Ricardo Alexandre Peixoto Queirós  
+> **Goodway** é uma aplicação web que permite planear o Caminho de Santiago de forma personalizada, visualizando rotas, alojamentos, comentários e pontos de interesse de forma interativa e acessível.
 
 ---
 
-## ✨ Resumo
+## ✨ Funcionalidades Principais
 
-O **Goodway** é uma aplicação web inteligente para o planeamento do Caminho de Santiago, criada para ajudar peregrinos a organizarem a sua jornada de forma personalizada, eficiente e interativa.  
-A plataforma disponibiliza sugestões de itinerários, mapas interativos, recomendações de alojamentos e pontos de interesse, tudo enriquecido com elementos de gamificação.
-
-**Principais Tecnologias:**
-- Mock server para gestão de dados fictícios
-- Frontend responsivo adaptado para desktop e mobile
-- Integração de mapas interativos
-- Funcionalidades de gamificação
-
----
-
-## 🎯 Objetivos do Projeto
-
-- Facilitar o planeamento da peregrinação, com itinerários personalizados
-- Aumentar o envolvimento dos utilizadores através da gamificação
-- Centralizar informações essenciais sobre o Caminho de Santiago
-- Promover inovação digital no turismo e peregrinação
+- 📍 **Mapa Interativo** com marcadores de alojamentos e locais relevantes.
+- 🛌 **Lista de Alojamentos** com filtros por localização e avaliação.
+- 💬 **Sistema de Comentários** com avaliação por estrelas e armazenamento local.
+- 🔐 **Autenticação Local** com Login / Registo usando `localStorage`.
+- 📄 **Página de Detalhes do Alojamento** com fotos, comodidades e comentários.
+- 🧭 **Geração de Rota Personalizada** baseada nas preferências do utilizador.
+- ⚡ **Mock Server** simula chamadas a uma API usando JS modular.
+- 🎨 **Design Responsivo e Coerente** com o tema visual do Caminho de Santiago.
 
 ---
 
-## 🛠 Funcionalidades Principais (Previstas)
+## 🧱 Tecnologias e Ferramentas Utilizadas
 
-- Registo e autenticação de utilizadores (incluindo integração com Google/Facebook)
-- Personalização de itinerários com base em preferências individuais
-- Visualização de rotas através de mapas interativos
-- Recomendações de alojamentos e pontos de interesse
-- Sistema de conquistas e desafios (gamificação)
-- Histórico de jornadas realizadas
-- Mock server para armazenamento de dados fictícios
-
----
-
-## 📋 Requisitos
-
-### Funcionais
-- Personalização de trajetos
-- Visualização de mapas e pontos de interesse
-- Registo, login, recuperação de palavra-passe
-- Avaliação de percursos e alojamentos
-- Sistema de gamificação
-
-### Não Funcionais
-- Interface responsiva e intuitiva
-- Carregamento rápido (mapas em <3s)
-- Segurança de dados (compliance GDPR)
-- Disponibilidade 24/7 com mínimo downtime
-- Compatibilidade cross-browser (Chrome, Firefox, Edge, Safari)
+| Tecnologia        | Descrição                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| `HTML` / `CSS`    | Estrutura base das páginas e estilo básico.                              |
+| **TailwindCSS**   | Framework utilitária para estilização rápida e responsiva.               |
+| `JavaScript` ES6  | Lógica do cliente, manipulação do DOM e simulação de backend.            |
+| `LocalStorage`    | Armazenamento local de utilizadores, sessões e comentários.              |
+| `Mock Server`     | Módulo JS com dados simulados de alojamentos e comentários (`mock/`).    |
+| `Lightbox`        | Visualização de imagens em tela cheia com efeito sobreposto.             |
+| `Modular JS`      | Código organizado por páginas e responsabilidades.                       |
 
 ---
 
-## 🧩 Metodologia
+## 🗂️ Estrutura do Projeto
 
-O projeto será desenvolvido com metodologias ágeis (iterativo e incremental), com entregas parciais e ajustadas conforme feedback.  
-Ferramentas utilizadas para organização:
-- **Discord** (comunicação e reuniões)
-- **Trello** e **Notion** (gestão de tarefas e cronograma)
-
----
-
-## 🗺️ Estado Atual
-
-- 📄 Levantamento de requisitos concluído
-- 🧠 Organização da equipa e definição das ferramentas
-- 🧩 Planeamento das etapas de desenvolvimento
-- ⏳ Início da implementação previsto para breve
-
----
-
-## 📈 Próximos Passos
-
-- Desenvolvimento do mock server
-- Primeiras versões do front-end (protótipos funcionais)
-- Integração das funcionalidades básicas
+```
+/
+├── index.html                # Landing page
+├── login.html                # Login e registo
+├── app.html                  # Página principal após login
+├── mapa.html                 # Mapa com alojamentos
+├── alojamento.html           # Detalhes de cada alojamento
+├── rotas.html                # Geração de rotas personalizadas
+├── mock/
+│   ├── server.js             # Mock de alojamentos
+│   └── comentarios.js        # Mock de comentários
+├── scripts/
+│   ├── alojamentos.js        # Lógica para alojamentos
+│   ├── mapa.js               # Lógica para mapa
+│   ├── rotas.js              # Lógica de geração de rotas
+│   └── login.js              # Validação de utilizador
+└── assets/
+    └── imagens/              # Imagens de exemplo
+```
 
 ---
 
-## 📌 Palavras-Chave
+## 📸 Capturas de Ecrã
 
-> Caminho de Santiago, Planeamento de Rotas, Aplicativo Web, Gamificação, Mock Server, UX
+> Substitui os links abaixo pelos teus screenshots:
+
+### 🟠 Página de Login / Registo
+![Login Screenshot](assets/imagens/login-screenshot.png)
+
+### 🟡 Lista de Alojamentos com Filtros
+![Alojamentos Screenshot](assets/imagens/alojamentos-screenshot.png)
+
+### 🟢 Detalhes de Alojamento com Comentários
+![Detalhes Screenshot](assets/imagens/detalhes-screenshot.png)
+
+### 🔵 Mapa Interativo com Alojamentos
+![Mapa Screenshot](assets/imagens/mapa-screenshot.png)
+
+### 🟣 Geração de Rota Personalizada
+![Rotas Screenshot](assets/imagens/rotas-screenshot.png)
 
 ---
 
-## 📍 Localização do Projeto
+## ✅ Como Usar
 
-> **Vila do Conde, Março de 2025**
+1. Clona o repositório:
+   ```bash
+   git clone https://github.com/teu-usuario/goodway.git
+   cd goodway
+   ```
+2. Abre `index.html` num browser (Chrome, Edge, Firefox).
+3. Recomenda-se usar a extensão **Live Server** no VSCode para melhor experiência.
+
+---
+
+## 📌 Notas Finais
+
+- O sistema de autenticação é **simulado** com `localStorage`.
+- Todos os dados são **mockados** para demonstração, sem backend real.
+- A aplicação está preparada para ser facilmente adaptada para APIs reais.
+
