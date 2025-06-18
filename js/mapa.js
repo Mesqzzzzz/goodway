@@ -32,11 +32,50 @@ obterAlojamentos().then((alojamentos) => {
       const imagem = aloj.fotos?.[0] || "";
 
       const popup = `
-        <div style="text-align: center;">
-          <strong>${aloj.nome}</strong><br>
-          <img src="${imagem}" width="150" height="100"><br>
-          Avaliação: ${media} ⭐<br>
-          <a href="alojamento.html?id=${aloj.id}">Ver detalhes</a>
+        <div style="
+          text-align: center; 
+          min-width: 220px; 
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: #4b4b4b;
+        ">
+          <strong style="color: #b45c04; font-size: 1.2rem; margin-bottom: 0.4rem; display: block;">
+            ${aloj.nome}
+          </strong>
+          <img 
+            src="${imagem}" 
+            alt="Foto de ${aloj.nome}" 
+            style="
+              width: 200px; 
+              height: 120px; 
+              object-fit: cover; 
+              border-radius: 0.5rem; 
+              box-shadow: 0 2px 8px rgb(180 92 4 / 0.3);
+              margin-bottom: 0.6rem;
+            "
+          />
+          <div style="font-size: 1rem; margin-bottom: 0.5rem;">
+            Avaliação: 
+            <span style="color: #b45c04; font-weight: 600;">
+              ${media === "Sem avaliações" ? media : media + " ⭐"}
+            </span>
+          </div>
+          <a href="alojamento.html?id=${aloj.id}" 
+             style="
+               display: inline-block; 
+               background-color: #b45c04; 
+               color: white; 
+               padding: 0.4rem 0.8rem; 
+               border-radius: 0.4rem; 
+               text-decoration: none; 
+               font-weight: 600;
+               box-shadow: 0 2px 6px rgb(180 92 4 / 0.5);
+               transition: background-color 0.3s ease;
+             "
+             onmouseover="this.style.backgroundColor='#8c4300'"
+             onmouseout="this.style.backgroundColor='#b45c04'"
+          >
+            Ver detalhes
+          </a>
         </div>
       `;
       marker.bindPopup(popup);

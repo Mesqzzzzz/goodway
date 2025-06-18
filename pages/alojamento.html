@@ -4,31 +4,53 @@
     <meta charset="UTF-8" />
     <title>Detalhes do Alojamento</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              destaque: "#b45c04",
+            },
+            fontFamily: {
+              sans: ["'Inter'", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-    <header class="bg-white shadow-md">
+  <body class="bg-[#fffaf3] text-gray-800 min-h-screen flex flex-col font-sans">
+    <header class="bg-[#fffaf3] shadow-md">
       <div
         class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
-        <nav class="space-x-6">
-          <a href="../app.html" class="text-gray-700 hover:text-blue-600"
+        <h1 class="text-2xl font-bold text-[#b45c04]">Goodway</h1>
+        <nav class="hidden md:flex space-x-6 text-gray-700">
+          <a
+            href="../app.html"
+            class="hover:text-[#b45c04] transition-colors duration-200"
             >Início</a
           >
-          <a href="./planeador.html" class="text-gray-700 hover:text-blue-600"
+          <a href="planeador.html" class="text-[#b45c04] font-semibold"
             >Planeador</a
           >
-          <a href="../pages/mapa.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="mapa.html"
+            class="hover:text-[#b45c04] transition-colors duration-200"
             >Mapa</a
           >
           <a
-            href="../pages/alojamentos.html"
-            class="text-blue-600 font-semibold"
+            href="alojamentos.html"
+            class="hover:text-[#b45c04] transition-colors duration-200"
             >Alojamentos</a
           >
           <a
-            href="../pages/perfil.html"
-            class="text-gray-700 hover:text-blue-600"
+            href="perfil.html"
+            class="hover:text-[#b45c04] transition-colors duration-200"
             >Perfil</a
           >
           <button onclick="logout()" class="text-red-600 hover:underline">
@@ -37,8 +59,9 @@
         </nav>
       </div>
     </header>
+
     <main id="conteudo" class="max-w-4xl mx-auto p-6">
-      <h1 id="nome" class="text-3xl font-bold mb-4 text-blue-600"></h1>
+      <h1 id="nome" class="text-3xl font-bold mb-4 text-destaque"></h1>
 
       <p class="text-gray-700 mb-2">
         <strong>Localização:</strong> <span id="localizacao"></span>
@@ -50,19 +73,30 @@
         <strong>Descrição:</strong> <span id="descricao"></span>
       </p>
 
-      <div id="galeria" class="grid grid-cols-2 gap-4"></div>
-      <ul class="grid grid-cols-2 gap-2 text-sm text-gray-600 mt-4">
+      <div id="galeria" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+
+      <ul
+        class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-600 mt-4"
+      >
         <li>✔ Wi-Fi gratuito</li>
         <li>✔ Lavandaria</li>
         <li>✔ Aceita peregrinos</li>
         <li>✔ Pequeno-almoço incluído</li>
       </ul>
     </main>
+
     <footer
-      class="bg-white border-t mt-auto py-4 text-center text-sm text-gray-500"
+      class="bg-[#fffaf3] border-t mt-auto py-4 text-center text-sm text-gray-500"
     >
       © 2025 Goodway. Todos os direitos reservados.
     </footer>
+    <script src="../js/main.js"></script>
     <script type="module" src="../js/detalhesAlojamento.js"></script>
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>

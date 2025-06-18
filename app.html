@@ -2,60 +2,237 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
-    <title>Goodway App</title>
+    <title>Goodway - Bem-vindo</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+  <body class="bg-[#fffaf3] text-gray-900 flex flex-col min-h-screen font-sans">
     <!-- Navbar -->
-    <header class="bg-white shadow-md">
+    <header class="bg-[#fffaf3] shadow-md sticky top-0 z-30">
       <div
-        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+        class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
-        <nav class="space-x-6">
-          <a href="#" class="text-blue-600 font-semibold">Início</a>
+        <h1
+          class="text-3xl font-extrabold tracking-wide text-[#b45c04] select-none"
+        >
+          Goodway
+        </h1>
+        <nav
+          class="hidden md:flex space-x-8 text-gray-700 font-medium tracking-wide"
+          aria-label="Menu principal"
+        >
+          <a
+            href="app.html"
+            class="relative pb-1 text-[#b45c04] font-semibold border-b-2 border-[#b45c04] pb-0.5"
+            >Início</a
+          >
           <a
             href="pages/planeador.html"
-            class="text-gray-700 hover:text-blue-600"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Planeador</a
           >
-          <a href="pages/mapa.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="pages/mapa.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Mapa</a
           >
           <a
             href="pages/alojamentos.html"
-            class="text-gray-700 hover:text-blue-600"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Alojamentos</a
           >
-          <a href="pages/perfil.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="pages/perfil.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Perfil</a
           >
-          <button onclick="logout()" class="text-red-600 hover:underline">
+          <button
+            onclick="logout()"
+            class="text-red-600 hover:underline focus:outline-none"
+            aria-label="Sair da aplicação"
+          >
             Sair
           </button>
         </nav>
       </div>
     </header>
 
-    <!-- Conteúdo central -->
-    <main
-      class="flex-grow max-w-4xl mx-auto px-4 py-16 flex flex-col justify-center items-center text-center"
-    >
-      <h2 class="text-4xl font-semibold mb-4">Bem-vindo ao Goodway!</h2>
-      <p class="text-lg text-gray-700 max-w-lg">
-        Planeia o teu Caminho de Santiago de forma personalizada, com mapas,
-        alojamentos, e recomendações feitas a pensar em ti.
-      </p>
+    <!-- Conteúdo -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-16">
+      <!-- Boas-vindas -->
+      <section class="mb-16 text-center">
+        <h2 class="text-4xl font-bold text-[#b45c04] mb-4" id="user-welcome">
+          Bem-vindo ao Goodway
+        </h2>
+        <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+          Estás prestes a começar ou continuar a tua jornada inesquecível no
+          Caminho de Santiago. Explora todas as funcionalidades e acompanha o
+          teu progresso.
+        </p>
+      </section>
+
+      <!-- Funcionalidades -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+      >
+        <a
+          href="pages/planeador.html"
+          class="group bg-[#fffaf3] p-6 rounded-lg shadow hover:shadow-xl transition block"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/64/ba7200/route.png"
+            class="mx-auto mb-4 transition group-hover:scale-110"
+            alt="Ícone Planeador"
+          />
+          <h3 class="text-xl font-semibold text-[#b45c04] mb-2 text-center">
+            Planeador
+          </h3>
+          <p class="text-gray-700 text-sm text-center">
+            Cria uma rota única com base no teu perfil e preferências.
+          </p>
+        </a>
+
+        <a
+          href="pages/mapa.html"
+          class="group bg-[#fffaf3] p-6 rounded-lg shadow hover:shadow-xl transition block"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/64/ba7200/map.png"
+            class="mx-auto mb-4 transition group-hover:scale-110"
+            alt="Ícone Mapa"
+          />
+          <h3 class="text-xl font-semibold text-[#b45c04] mb-2 text-center">
+            Mapa Interativo
+          </h3>
+          <p class="text-gray-700 text-sm text-center">
+            Explora rotas, alojamentos e locais recomendados no mapa.
+          </p>
+        </a>
+
+        <a
+          href="pages/alojamentos.html"
+          class="group bg-[#fffaf3] p-6 rounded-lg shadow hover:shadow-xl transition block"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/64/ba7200/bed.png"
+            class="mx-auto mb-4 transition group-hover:scale-110"
+            alt="Ícone Alojamentos"
+          />
+          <h3 class="text-xl font-semibold text-[#b45c04] mb-2 text-center">
+            Alojamentos
+          </h3>
+          <p class="text-gray-700 text-sm text-center">
+            Consulta alojamentos recomendados ao longo do teu caminho.
+          </p>
+        </a>
+
+        <a
+          href="pages/perfil.html"
+          class="group bg-[#fffaf3] p-6 rounded-lg shadow hover:shadow-xl transition block"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/64/ba7200/user.png"
+            class="mx-auto mb-4 transition group-hover:scale-110"
+            alt="Ícone Perfil"
+          />
+          <h3 class="text-xl font-semibold text-[#b45c04] mb-2 text-center">
+            Perfil
+          </h3>
+          <p class="text-gray-700 text-sm text-center">
+            Vê os teus dados, preferências e planos guardados.
+          </p>
+        </a>
+      </section>
+
+      <!-- Progresso do utilizador -->
+      <section class="mb-20 text-center">
+        <h3 class="text-2xl font-bold text-[#b45c04] mb-4">O teu progresso</h3>
+        <p class="text-gray-700 mb-6">
+          Estás a 35% da tua jornada. Continua assim!
+        </p>
+        <div class="bg-gray-200 h-4 rounded-full max-w-xl mx-auto mb-4">
+          <div class="bg-[#b45c04] h-4 rounded-full" style="width: 35%"></div>
+        </div>
+        <div class="flex justify-center gap-4 mt-4">
+          <span
+            class="bg-[#ffe7cc] text-[#b45c04] px-4 py-2 rounded-full text-sm font-medium"
+            >🏅 Iniciou a caminhada</span
+          >
+          <span
+            class="bg-[#ffe7cc] text-[#b45c04] px-4 py-2 rounded-full text-sm font-medium"
+            >📍 Visitou 5 locais</span
+          >
+          <span
+            class="bg-[#ffe7cc] text-[#b45c04] px-4 py-2 rounded-full text-sm font-medium"
+            >🛏 2 reservas feitas</span
+          >
+        </div>
+      </section>
+
+      <!-- Sugestões -->
+      <section class="mb-20">
+        <h3 class="text-2xl font-bold text-[#b45c04] mb-6 text-center">
+          Sugestões para hoje
+        </h3>
+        <ul class="grid md:grid-cols-2 gap-6 text-gray-700">
+          <li
+            class="bg-[#fffaf3] p-4 rounded shadow hover:shadow-lg transition"
+          >
+            🔍 Explora a etapa “Redondela - Pontevedra” com vista para o mar.
+          </li>
+          <li
+            class="bg-[#fffaf3] p-4 rounded shadow hover:shadow-lg transition"
+          >
+            🛏 Dá uma vista de olhos no Albergue “Camino Verde”, muito
+            recomendado.
+          </li>
+          <li
+            class="bg-[#fffaf3] p-4 rounded shadow hover:shadow-lg transition"
+          >
+            📌 Marca os teus pontos favoritos no mapa para consulta offline.
+          </li>
+          <li
+            class="bg-[#fffaf3] p-4 rounded shadow hover:shadow-lg transition"
+          >
+            📝 Atualiza o teu perfil com preferências para melhorar sugestões.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Frase inspiradora -->
+      <section class="text-center mt-16">
+        <blockquote class="italic text-lg text-gray-600 max-w-2xl mx-auto">
+          "O Caminho começa no primeiro passo — e cada passo revela algo novo em
+          ti."
+        </blockquote>
+      </section>
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-white shadow-inner py-4 mt-auto">
-      <div class="max-w-7xl mx-auto text-center text-gray-600 text-sm">
-        &copy; 2025 Goodway. Todos os direitos reservados.
+    <footer class="bg-[#fffaf3] border-t border-gray-300 py-6 mt-12">
+      <div
+        class="max-w-7xl mx-auto px-4 text-center text-gray-700 text-sm select-none"
+      >
+        <p class="mt-2 text-[#b45c04] font-semibold">
+          © 2025 Goodway. Todos os direitos reservados.
+        </p>
       </div>
     </footer>
 
-    <script src="js/auth.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script>
+      // Personalizar nome de utilizador se disponível
+      const authUser = localStorage.getItem("authUser");
+      if (authUser) {
+        const { name, username } = JSON.parse(authUser);
+        document.getElementById("user-welcome").textContent = `Olá, ${
+          name || username
+        }!`;
+      }
+
+      function logout() {
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("authUser");
+        window.location.href = "index.html";
+      }
+    </script>
   </body>
 </html>

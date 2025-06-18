@@ -2,23 +2,30 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
-    <title>Goodway Login / Registo</title>
+    <title>Goodway - Login / Registo</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-50 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-      <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Goodway</h1>
+  <body
+    class="bg-[#fffaf3] flex items-center justify-center min-h-screen font-sans"
+  >
+    <div
+      class="bg-[#fffaf3] p-10 rounded-2xl shadow-xl w-full max-w-md border border-[#f5e2cd]"
+    >
+      <h1 class="text-4xl font-bold mb-8 text-center text-[#b45c04]">
+        Goodway
+      </h1>
 
-      <div class="flex justify-center mb-6">
+      <!-- Botões de alternância -->
+      <div class="flex justify-center mb-8">
         <button
           id="btn-login"
-          class="px-4 py-2 font-semibold border-b-2 border-blue-600"
+          class="px-5 py-2 font-semibold border-b-2 border-[#b45c04] text-[#b45c04] transition"
         >
           Login
         </button>
         <button
           id="btn-register"
-          class="px-4 py-2 font-semibold text-gray-500 hover:text-blue-600"
+          class="px-5 py-2 font-semibold text-gray-500 hover:text-[#b45c04] transition"
         >
           Registo
         </button>
@@ -31,59 +38,59 @@
           id="login-email"
           placeholder="Email"
           required
-          class="w-full px-4 py-2 border rounded"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04]"
         />
         <input
           type="password"
           id="login-password"
           placeholder="Senha"
           required
-          class="w-full px-4 py-2 border rounded"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04]"
         />
         <button
           type="submit"
-          class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+          class="w-full bg-[#b45c04] text-white py-2 rounded-lg hover:bg-[#995004] transition"
         >
           Entrar
         </button>
       </form>
 
-      <!-- Register Form (hidden por defeito) -->
+      <!-- Register Form -->
       <form id="form-register" class="space-y-4 hidden">
         <input
           type="text"
           id="register-name"
-          placeholder="Nome"
+          placeholder="Nome completo"
           required
-          class="w-full px-4 py-2 border rounded"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04]"
         />
         <input
           type="email"
           id="register-email"
           placeholder="Email"
           required
-          class="w-full px-4 py-2 border rounded"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04]"
         />
         <input
           type="password"
           id="register-password"
           placeholder="Senha"
           required
-          class="w-full px-4 py-2 border rounded"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04]"
         />
         <button
           type="submit"
-          class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+          class="w-full bg-[#3fa34d] text-white py-2 rounded-lg hover:bg-[#328a40] transition"
         >
           Registar
         </button>
       </form>
 
-      <p id="message" class="mt-4 text-center text-red-600"></p>
+      <!-- Mensagem -->
+      <p id="message" class="mt-6 text-center text-sm font-medium"></p>
     </div>
 
     <script>
-      // Alternar entre Login e Registo
       const btnLogin = document.getElementById("btn-login");
       const btnRegister = document.getElementById("btn-register");
       const formLogin = document.getElementById("form-login");
@@ -91,46 +98,60 @@
       const message = document.getElementById("message");
 
       btnLogin.onclick = () => {
-        btnLogin.classList.add("border-blue-600", "text-blue-600");
-        btnRegister.classList.remove("border-blue-600", "text-blue-600");
+        btnLogin.classList.add(
+          "border-b-2",
+          "border-[#b45c04]",
+          "text-[#b45c04]"
+        );
+        btnRegister.classList.remove(
+          "border-b-2",
+          "border-[#b45c04]",
+          "text-[#b45c04]"
+        );
         formLogin.classList.remove("hidden");
         formRegister.classList.add("hidden");
         message.textContent = "";
+        message.className = "mt-6 text-center text-sm font-medium";
       };
 
       btnRegister.onclick = () => {
-        btnRegister.classList.add("border-green-600", "text-green-600");
-        btnLogin.classList.remove("border-blue-600", "text-blue-600");
+        btnRegister.classList.add(
+          "border-b-2",
+          "border-[#3fa34d]",
+          "text-[#3fa34d]"
+        );
+        btnLogin.classList.remove(
+          "border-b-2",
+          "border-[#b45c04]",
+          "text-[#b45c04]"
+        );
         formRegister.classList.remove("hidden");
         formLogin.classList.add("hidden");
         message.textContent = "";
+        message.className = "mt-6 text-center text-sm font-medium";
       };
 
-      // Função para simular API e guardar utilizadores no localStorage
       function saveUser(name, email, password) {
         const users = JSON.parse(localStorage.getItem("users") || "[]");
         if (users.find((u) => u.email === email)) {
-          return false; // email já existe
+          return false;
         }
         users.push({ name, email, password });
         localStorage.setItem("users", JSON.stringify(users));
         return true;
       }
 
-      // Função para validar login
       function validateLogin(email, password) {
         const users = JSON.parse(localStorage.getItem("users") || "[]");
         return users.find((u) => u.email === email && u.password === password);
       }
 
-      // Guardar sessão (token simulado)
       function setSession(user) {
-        const token = btoa(user.email + ":" + user.password); // token simples base64 para exemplo
+        const token = btoa(user.email + ":" + user.password);
         localStorage.setItem("authToken", token);
         localStorage.setItem("authUser", JSON.stringify(user));
       }
 
-      // Login submit
       formLogin.onsubmit = (e) => {
         e.preventDefault();
         const email = document.getElementById("login-email").value.trim();
@@ -142,10 +163,11 @@
           window.location.href = "app.html";
         } else {
           message.textContent = "Email ou senha inválidos.";
+          message.className =
+            "mt-6 text-center text-sm font-medium text-red-600";
         }
       };
 
-      // Register submit
       formRegister.onsubmit = (e) => {
         e.preventDefault();
         const name = document.getElementById("register-name").value.trim();
@@ -155,12 +177,14 @@
           .value.trim();
 
         if (saveUser(name, email, password)) {
-          message.style.color = "green";
           message.textContent = "Registo efetuado com sucesso! Faça login.";
+          message.className =
+            "mt-6 text-center text-sm font-medium text-green-600";
           btnLogin.click();
         } else {
-          message.style.color = "red";
           message.textContent = "Email já registado.";
+          message.className =
+            "mt-6 text-center text-sm font-medium text-red-600";
         }
       };
     </script>

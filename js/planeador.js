@@ -5,17 +5,75 @@ const form = document.getElementById("form-planeador");
 const selectRota = document.getElementById("input-rota");
 const selInicio = document.getElementById("input-partida");
 const selChegada = document.getElementById("input-chegada");
+const grupoPartidaChegada = document.getElementById("grupo-partida-chegada");
 const ul = document.getElementById("lista-rota");
 const resultado = document.getElementById("resultado-rota");
+
+// Inicializar options da rota
+function popularRotas() {
+  selectRota.innerHTML =
+    '<option value="" disabled selected>Seleciona uma rota</option>' +
+    Object.keys(rotas)
+      .map((chave) => `<option value="${chave}">${chave}</option>`)
+      .join("");
+}
+popularRotas();
 
 selectRota.addEventListener("change", () => {
   const rota = rotas[selectRota.value] || [];
   const nomes = rota.map((e) => e.nome);
-  [selInicio, selChegada].forEach((sel) => {
-    sel.innerHTML =
-      '<option value="">–</option>' +
-      nomes.map((loc) => `<option value="${loc}">${loc}</option>`).join("");
-  });
+
+  if (nomes.length === 0) {
+    grupoPartidaChegada.classList.add("hidden");
+    selInicio.innerHTML = `<option value="" disabled selected>–</option>`;
+    selChegada.innerHTML = `<option value="" disabled selected>–</option>`;
+    selInicio.disabled = true;
+    selChegada.disabled = true;
+    return;
+  }
+
+  grupoPartidaChegada.classList.remove("hidden");
+
+  selInicio.innerHTML =
+    `<option value="" disabled selected>Seleciona o ponto de partida</option>` +
+    nomes.map((loc) => `<option value="${loc}">${loc}</option>`).join("");
+  selInicio.disabled = false;
+
+  selChegada.innerHTML = `<option value="" disabled selected>Seleciona o ponto de chegada</option>`;
+  selChegada.disabled = true;
+});
+
+selInicio.addEventListener("change", () => {
+  const rota = rotas[selectRota.value] || [];
+  const nomes = rota.map((e) => e.nome);
+
+  if (!selInicio.value) {
+    selChegada.innerHTML = `<option value="" disabled selected>Seleciona o ponto de chegada</option>`;
+    selChegada.disabled = true;
+    return;
+  }
+
+  const inicioIndex = nomes.indexOf(selInicio.value);
+  if (inicioIndex < 0) {
+    selChegada.disabled = true;
+    return;
+  }
+
+  // Filtra apenas locais após o ponto de partida
+  const chegadaOpcoes = nomes.slice(inicioIndex + 1);
+
+  if (chegadaOpcoes.length === 0) {
+    selChegada.innerHTML = `<option value="" disabled selected>Sem opções após a partida</option>`;
+    selChegada.disabled = true;
+    return;
+  }
+
+  selChegada.innerHTML =
+    `<option value="" disabled selected>Seleciona o ponto de chegada</option>` +
+    chegadaOpcoes
+      .map((loc) => `<option value="${loc}">${loc}</option>`)
+      .join("");
+  selChegada.disabled = false;
 });
 
 form.addEventListener("submit", async (e) => {
@@ -37,6 +95,7 @@ form.addEventListener("submit", async (e) => {
     ul.innerHTML =
       "<li>Não foi possível gerar um itinerário com os dados fornecidos.</li>";
     resultado.classList.remove("hidden");
+    resultado.style.opacity = 1;
     return;
   }
 
@@ -49,7 +108,7 @@ form.addEventListener("submit", async (e) => {
       );
 
       const linkAlojamento = alojamento
-        ? `<a href="alojamento.html?id=${alojamento.id}" title="Ver alojamento" class="ml-2 text-blue-600 hover:underline">🏠</a>`
+        ? `<a href="alojamento.html?id=${alojamento.id}" title="Ver alojamento" class="ml-2 text-[#b45c04] hover:underline">🏠</a>`
         : "";
 
       return `<li>
@@ -62,8 +121,11 @@ form.addEventListener("submit", async (e) => {
     .join("");
 
   resultado.classList.remove("hidden");
+  resultado.style.opacity = 0;
+  setTimeout(() => {
+    resultado.style.opacity = 1;
+  }, 10);
 });
-
 function gerarRota({ rotaEscolhida, inicio, chegada, dificuldade }) {
   const rota = rotas[rotaEscolhida];
   if (!rota) return [];
@@ -91,70 +153,49 @@ function gerarRota({ rotaEscolhida, inicio, chegada, dificuldade }) {
       break;
   }
 
-  const distanciaMax = 25 * fatorDificuldade;
-  const velocidadeMedia = 5; // km/h
+  // Máximo km por dia ajustado pela dificuldade
+  const maxKmDia = 20 * fatorDificuldade;
+
+  let dia = 1;
+  let acumulado = 0;
+  let inicioDia = subNomes[0];
+  let horaAtual = 8; // saída às 08:00
 
   const etapas = [];
-  let acumulado = 0;
-  let etapaInicioIndex = 0;
 
-  const HORA_INICIO_PADRAO = 8 * 60; // 08:00
+  function formatarHora(h) {
+    // normaliza hora para 0-23
+    const hora24 = Math.floor(h) % 24;
+    const minutos = Math.floor((h % 1) * 60);
+    return `${hora24.toString().padStart(2, "0")}:${minutos
+      .toString()
+      .padStart(2, "0")}`;
+  }
 
   for (let i = 0; i < subDist.length; i++) {
     acumulado += subDist[i];
-
-    if (acumulado >= distanciaMax) {
-      const inicioEtapa = subNomes[etapaInicioIndex];
-      const fimEtapa = subNomes[i + 1];
-      const duracaoHoras = acumulado / velocidadeMedia;
-      const horaInicioDia = HORA_INICIO_PADRAO;
-      const horaFimDia = horaInicioDia + duracaoHoras * 60;
+    const isUltima = i === subDist.length - 1;
+    if (acumulado >= maxKmDia || isUltima) {
+      const fimDia = subNomes[i + 1];
+      const distanciaDia = acumulado;
+      const tempoCaminhada = distanciaDia / 4.5; // ritmo ~4.5 km/h
+      const horaFim = horaAtual + tempoCaminhada;
 
       etapas.push({
-        dia: etapas.length + 1,
-        inicioEtapa,
-        fimEtapa,
-        distancia: acumulado,
-        horaInicio: formataHora(horaInicioDia),
-        horaFim: formataHora(horaFimDia),
+        dia,
+        inicioEtapa: inicioDia,
+        fimEtapa: fimDia,
+        distancia: distanciaDia,
+        horaInicio: formatarHora(horaAtual),
+        horaFim: formatarHora(horaFim),
       });
 
+      dia++;
       acumulado = 0;
-      etapaInicioIndex = i + 1;
+      inicioDia = fimDia;
+      horaAtual = horaFim + 1; // 1h pausa
     }
-  }
-
-  // Última etapa se ainda não foi adicionada
-  if (
-    etapas.length === 0 ||
-    etapas[etapas.length - 1].fimEtapa !== subNomes[subNomes.length - 1]
-  ) {
-    let restante = 0;
-    for (let i = etapaInicioIndex; i < subDist.length; i++) {
-      restante += subDist[i];
-    }
-
-    const inicioEtapa = subNomes[etapaInicioIndex];
-    const fimEtapa = subNomes[subNomes.length - 1];
-    const duracaoHoras = restante / velocidadeMedia;
-    const horaInicioDia = HORA_INICIO_PADRAO;
-    const horaFimDia = horaInicioDia + duracaoHoras * 60;
-
-    etapas.push({
-      dia: etapas.length + 1,
-      inicioEtapa,
-      fimEtapa,
-      distancia: restante,
-      horaInicio: formataHora(horaInicioDia),
-      horaFim: formataHora(horaFimDia),
-    });
   }
 
   return etapas;
-}
-
-function formataHora(minutos) {
-  const h = Math.floor(minutos / 60) % 24;
-  const m = Math.round(minutos % 60);
-  return `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}`;
 }

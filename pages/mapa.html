@@ -9,52 +9,253 @@
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+      :root {
+        --cor-destaque: #b45c04;
+      }
+      .text-destaque {
+        color: var(--cor-destaque);
+      }
+      .hover-text-destaque:hover {
+        color: var(--cor-destaque);
+      }
+      .bg-destaque {
+        background-color: var(--cor-destaque);
+      }
+
+      /* Estilo do mapa */
+      #map {
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 10px rgb(180 92 4 / 0.3);
+        border: 1px solid #d1d5db;
+      }
+
+      /* Botões personalizados de zoom e centrar */
+      .leaflet-control.custom-zoom {
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgb(180 92 4 / 0.3);
+        border: 1px solid #d1d5db;
+        width: 36px;
+        height: 36px;
+        line-height: 34px;
+        text-align: center;
+        cursor: pointer;
+        color: var(--cor-destaque);
+        font-weight: 700;
+        font-size: 20px;
+        user-select: none;
+      }
+      .leaflet-control.custom-zoom:hover {
+        background-color: #f0e6d2;
+      }
+
+      /* Botão centrar estilo */
+      .leaflet-control.custom-center {
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgb(180 92 4 / 0.3);
+        border: 1px solid #d1d5db;
+        width: 36px;
+        height: 36px;
+        line-height: 34px;
+        text-align: center;
+        cursor: pointer;
+        color: var(--cor-destaque);
+        font-weight: 700;
+        font-size: 18px;
+        user-select: none;
+        margin-top: 6px;
+      }
+      .leaflet-control.custom-center:hover {
+        background-color: #f0e6d2;
+      }
+
+      /* Legenda simples no canto inferior direito */
+      .map-legend {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background: white;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgb(180 92 4 / 0.3);
+        font-size: 0.85rem;
+        color: #444;
+        user-select: none;
+        z-index: 1000;
+      }
+      .map-legend strong {
+        color: var(--cor-destaque);
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+      .map-legend ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+      .map-legend li {
+        list-style: disc;
+        margin-bottom: 0.2rem;
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-    <header class="bg-white shadow-md">
+  <body class="bg-[#fffaf3] text-gray-800 min-h-screen flex flex-col font-sans">
+    <header class="bg-[#fffaf3] shadow-md sticky top-0 z-30">
       <div
-        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+        class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
-        <nav class="space-x-6">
-          <a href="../app.html" class="text-gray-700 hover:text-blue-600"
+        <h1
+          class="text-3xl font-extrabold tracking-wide text-[#b45c04] select-none"
+        >
+          Goodway
+        </h1>
+        <nav
+          class="hidden md:flex space-x-8 text-gray-700 font-medium tracking-wide"
+          aria-label="Menu principal"
+        >
+          <a
+            href="../app.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Início</a
           >
-          <a href="planeador.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="planeador.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Planeador</a
           >
-          <a href="mapa.html" class="text-blue-600 font-semibold">Mapa</a>
-          <a href="alojamentos.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="mapa.html"
+            class="relative pb-1 text-[#b45c04] font-semibold border-b-2 border-[#b45c04] pb-0.5"
+            >Mapa</a
+          >
+          <a
+            href="alojamentos.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Alojamentos</a
           >
-          <a href="perfil.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="perfil.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Perfil</a
           >
-          <button onclick="logout()" class="text-red-600 hover:underline">
+          <button
+            onclick="logout()"
+            class="text-red-600 hover:underline focus:outline-none"
+            aria-label="Sair da aplicação"
+          >
             Sair
           </button>
         </nav>
       </div>
     </header>
 
-    <main class="flex-grow w-full p-6">
-      <section class="max-w-4xl mx-auto space-y-4">
-        <h2 class="text-2xl font-bold text-blue-600">Mapa Interativo</h2>
+    <main class="flex-grow w-full p-6 relative">
+      <section class="max-w-4xl mx-auto space-y-6">
+        <h2 class="text-3xl font-bold text-destaque">Mapa Interativo</h2>
+        <p class="text-gray-600 text-base max-w-xl mx-auto">
+          Explora os alojamentos e pontos de interesse no mapa interativo.
+        </p>
       </section>
 
-      <!-- Mapa fora do max-w para ocupar largura total -->
-      <section class="w-full mt-6">
-        <div id="map" class="w-[80%] mx-auto h-[600px] rounded shadow"></div>
+      <section class="w-full mt-8 relative flex justify-center">
+        <div
+          id="map"
+          class="mx-auto h-[600px] w-[90vw] max-w-6xl rounded-xl shadow-lg border border-gray-300"
+        ></div>
+        <div class="map-legend" aria-hidden="true">
+          <strong>Legenda</strong>
+          <ul>
+            <li>🏨 Hotel</li>
+            <li>🛌 Hostel</li>
+            <li>🏠 Casa Rural</li>
+            <li>🎒 Albergue</li>
+          </ul>
+        </div>
       </section>
     </main>
 
     <footer
-      class="bg-white border-t mt-auto py-4 text-center text-sm text-gray-500"
+      class="bg-[#fffaf3] border-t mt-auto py-3 text-center text-sm text-gray-500"
     >
       © 2025 Goodway. Todos os direitos reservados.
     </footer>
-    <script type="module" src="../js/mapa.js"></script>
 
-    <script src="/js/auth.js"></script>
+    <script type="module" src="../js/mapa.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script>
+      // Adiciona botões zoom +, -, e centrar (geolocalização)
+      import L from "leaflet";
+
+      // Esperar DOM e Leaflet carregarem
+      window.addEventListener("load", () => {
+        const map = window.goodwayMapInstance;
+        // Assume que no mapa.js crias algo tipo window.goodwayMapInstance = mapaLeaflet;
+
+        if (!map) {
+          console.warn(
+            "Mapa Leaflet não encontrado em window.goodwayMapInstance"
+          );
+          return;
+        }
+
+        // Remove controles padrão zoom
+        map.zoomControl.remove();
+
+        // Botão zoom +
+        const zoomIn = L.control({ position: "topleft" });
+        zoomIn.onAdd = function () {
+          const btn = L.DomUtil.create("button", "leaflet-control custom-zoom");
+          btn.innerHTML = "+";
+          btn.title = "Aumentar zoom";
+          btn.setAttribute("aria-label", "Aumentar zoom");
+          L.DomEvent.on(btn, "click", () => map.zoomIn());
+          return btn;
+        };
+        zoomIn.addTo(map);
+
+        // Botão zoom -
+        const zoomOut = L.control({ position: "topleft" });
+        zoomOut.onAdd = function () {
+          const btn = L.DomUtil.create("button", "leaflet-control custom-zoom");
+          btn.innerHTML = "−";
+          btn.title = "Diminuir zoom";
+          btn.setAttribute("aria-label", "Diminuir zoom");
+          L.DomEvent.on(btn, "click", () => map.zoomOut());
+          return btn;
+        };
+        zoomOut.addTo(map);
+
+        // Botão centrar
+        const btnCenter = L.control({ position: "topleft" });
+        btnCenter.onAdd = function () {
+          const btn = L.DomUtil.create(
+            "button",
+            "leaflet-control custom-center"
+          );
+          btn.innerHTML = "📍";
+          btn.title = "Centrar na localização atual";
+          btn.setAttribute("aria-label", "Centrar na localização atual");
+          L.DomEvent.on(btn, "click", () => {
+            if (!navigator.geolocation) {
+              alert("Geolocalização não suportada pelo browser.");
+              return;
+            }
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                map.setView([pos.coords.latitude, pos.coords.longitude], 14);
+              },
+              () => {
+                alert("Não foi possível obter a localização.");
+              }
+            );
+          });
+          return btn;
+        };
+        btnCenter.addTo(map);
+      });
+    </script>
   </body>
 </html>

@@ -5,160 +5,170 @@
     <title>Goodway - Planeador</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-    <header class="bg-white shadow-md">
+  <body class="bg-[#fffaf3] text-gray-800 min-h-screen flex flex-col font-sans">
+    <header class="bg-[#fffaf3] shadow-md sticky top-0 z-30">
       <div
-        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+        class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
-        <nav class="space-x-6">
-          <a href="../app.html" class="text-gray-700 hover:text-blue-600"
+        <h1
+          class="text-3xl font-extrabold tracking-wide text-[#b45c04] select-none"
+        >
+          Goodway
+        </h1>
+        <nav
+          class="hidden md:flex space-x-8 text-gray-700 font-medium tracking-wide"
+          aria-label="Menu principal"
+        >
+          <a
+            href="../app.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Início</a
           >
-          <a href="planeador.html" class="text-blue-600 font-semibold"
+          <a
+            href="planeador.html"
+            class="relative pb-1 text-[#b45c04] font-semibold border-b-2 border-[#b45c04] pb-0.5"
             >Planeador</a
           >
-          <a href="mapa.html" class="text-gray-700 hover:text-blue-600">Mapa</a>
-          <a href="alojamentos.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="mapa.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >Mapa</a
+          >
+          <a
+            href="alojamentos.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Alojamentos</a
           >
-          <a href="perfil.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="perfil.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Perfil</a
           >
-          <button onclick="logout()" class="text-red-600 hover:underline">
+          <button
+            onclick="logout()"
+            class="text-red-600 hover:underline focus:outline-none"
+            aria-label="Sair da aplicação"
+          >
             Sair
           </button>
         </nav>
       </div>
     </header>
 
-    <main id="conteudo" class="flex-grow max-w-4xl mx-auto p-6">
-      <section class="space-y-6">
-        <h2 class="text-2xl font-bold text-blue-600">
-          Planeador de Itinerário
-        </h2>
-        <form id="form-planeador" class="space-y-4">
-          <div>
-            <label class="block text-sm font-medium">Escolhe o Caminho</label>
-            <select id="input-rota" class="w-full p-2 border rounded" required>
-              <option value="">Seleciona uma rota</option>
-              <option value="central">Português Central</option>
-              <option value="costa">Português da Costa</option>
-              <option value="interior">Português Interior</option>
-            </select>
-          </div>
+    <main
+      id="conteudo"
+      class="flex-grow max-w-4xl mx-auto p-6 px-4 sm:px-6 lg:px-8"
+    >
+      <h2 class="text-3xl font-bold text-[#b45c04] mb-8 tracking-wide">
+        Planeador do Caminho de Santiago
+      </h2>
 
-          <div id="grupo-partida-chegada" class="space-y-4">
-            <div>
-              <label class="block text-sm font-medium">Ponto de partida</label>
-              <select
-                id="input-partida"
-                class="w-full p-2 border rounded"
-                required
-              >
-                <option value="">–</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium">Ponto de chegada</label>
-              <select
-                id="input-chegada"
-                class="w-full p-2 border rounded"
-                required
-              >
-                <option value="">–</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- <div>
-            <label class="block text-sm font-medium"
-              >Distância diária (km)</label
-            >
-            <input
-              id="input-distancia"
-              type="number"
-              min="5"
-              max="50"
-              class="w-full p-2 border rounded"
-              placeholder="Ex: 25"
-              required
-            />
-          </div> -->
-
-          <div>
-            <label class="block text-sm font-medium"
-              >Nível de dificuldade</label
-            >
-            <select
-              id="input-dificuldade"
-              class="w-full p-2 border rounded"
-              required
-            >
-              <option value="">Seleciona uma opção</option>
-              <option value="facil">Fácil</option>
-              <option value="medio">Médio</option>
-              <option value="dificil">Difícil</option>
-            </select>
-          </div>
-
-          <!-- <div>
-            <label class="block text-sm font-medium">Interesses</label>
-            <input
-              id="input-interesses"
-              type="text"
-              class="w-full p-2 border rounded"
-              placeholder="Ex: natureza, igrejas"
-            />
-          </div> -->
-
-          <button
-            type="submit"
-            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      <form
+        id="form-planeador"
+        class="space-y-8 bg-[#fffaf3] p-8 rounded-xl shadow-md border border-gray-200"
+        novalidate
+      >
+        <div>
+          <label for="input-rota" class="block font-semibold mb-2 text-gray-700"
+            >Seleciona uma rota:</label
           >
-            Gerar Roteiro
-          </button>
-        </form>
-
-        <div
-          id="resultado-rota"
-          class="hidden mt-6 p-4 bg-blue-100 border border-blue-300 rounded max-w-4xl mx-auto"
-        >
-          <h3 class="text-xl font-semibold mb-3 text-blue-700">
-            Itinerário Gerado:
-          </h3>
-          <ul id="lista-rota" class="list-disc list-inside text-gray-700"></ul>
+          <select
+            id="input-rota"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04] transition duration-200"
+            required
+          >
+            <option value="" disabled selected>Seleciona uma rota</option>
+            <!-- Opções adicionadas pelo JS -->
+          </select>
         </div>
 
-        <script type="module">
-          import { rotas } from "../mock/etapas.js";
+        <div id="grupo-partida-chegada" class="hidden space-y-6">
+          <div>
+            <label
+              for="input-partida"
+              class="block font-semibold mb-2 text-gray-700"
+              >Ponto de partida:</label
+            >
+            <select
+              id="input-partida"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04] disabled:opacity-60 disabled:cursor-not-allowed transition duration-200"
+              disabled
+              required
+            >
+              <option value="" disabled selected>
+                Seleciona o ponto de partida
+              </option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="input-chegada"
+              class="block font-semibold mb-2 text-gray-700"
+              >Ponto de chegada:</label
+            >
+            <select
+              id="input-chegada"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04] disabled:opacity-60 disabled:cursor-not-allowed transition duration-200"
+              disabled
+              required
+            >
+              <option value="" disabled selected>
+                Seleciona o ponto de chegada
+              </option>
+            </select>
+          </div>
+        </div>
 
-          const selectCaminho = document.getElementById("input-rota");
-          const grupoPartidaChegada = document.getElementById(
-            "grupo-partida-chegada"
-          );
-          const selectPartida = document.getElementById("input-partida");
-          const selectChegada = document.getElementById("input-chegada");
+        <div>
+          <label
+            for="input-dificuldade"
+            class="block font-semibold mb-2 text-gray-700"
+            >Dificuldade:</label
+          >
+          <select
+            id="input-dificuldade"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b45c04] transition duration-200"
+            required
+          >
+            <option value="facil">Fácil</option>
+            <option value="medio" selected>Médio</option>
+            <option value="dificil">Difícil</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-[#b45c04] text-white font-semibold text-base py-2.5 rounded-md shadow-sm hover:bg-[#924203] focus:outline-none focus:ring-2 focus:ring-[#b45c04] transition-colors duration-200"
+        >
+          Gerar Roteiro
+        </button>
+      </form>
 
-          selectCaminho.addEventListener("change", () => {
-            const caminho = selectCaminho.value;
-            if (!rotas[caminho]) {
-              grupoPartidaChegada.classList.add("hidden");
-              return;
-            }
-
-            grupoPartidaChegada.classList.remove("hidden");
-            const etapas = rotas[caminho]; // array de strings, ex: ["Porto", "Barcelos", ...]
-            const opcoes = etapas; // usamos diretamente o array de strings
-
-            selectPartida.innerHTML = opcoes
-              .map((p) => `<option value="${p}">${p}</option>`)
-              .join("");
-            selectChegada.innerHTML = selectPartida.innerHTML;
-          });
-        </script>
-      </section>
+      <div
+        id="resultado-rota"
+        class="hidden mt-12 p-6 bg-[#f0f8ff] border border-blue-300 rounded-xl max-w-4xl mx-auto transition-opacity duration-500 shadow-inner"
+        aria-live="polite"
+      >
+        <h3 class="text-2xl font-semibold mb-6 text-[#b45c04] tracking-wide">
+          Itinerário gerado
+        </h3>
+        <ul
+          id="lista-rota"
+          class="list-disc list-inside space-y-3 text-gray-700 text-lg"
+        ></ul>
+      </div>
     </main>
+
+    <footer class="bg-[#fffaf3] border-t border-gray-300 py-6 mt-12">
+      <div
+        class="max-w-7xl mx-auto px-4 text-center text-gray-700 text-sm select-none"
+      >
+        <p class="mt-2 text-[#b45c04] font-semibold">
+          © 2025 Goodway. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
     <script type="module" src="../js/planeador.js"></script>
   </body>
 </html>

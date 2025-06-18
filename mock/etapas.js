@@ -1,5 +1,5 @@
 export const rotas = {
-  central: [
+  Central: [
     { nome: "Porto", distanciaParaProximo: 60 },
     { nome: "Barcelos", distanciaParaProximo: 35 },
     { nome: "Ponte de Lima", distanciaParaProximo: 25 },
@@ -11,7 +11,7 @@ export const rotas = {
     { nome: "Padrón", distanciaParaProximo: 25 },
     { nome: "Santiago", distanciaParaProximo: 0 }, // Último ponto
   ],
-  costa: [
+  Costa: [
     { nome: "Porto", distanciaParaProximo: 30 },
     { nome: "Vila do Conde", distanciaParaProximo: 25 },
     { nome: "Póvoa de Varzim", distanciaParaProximo: 40 },
@@ -26,7 +26,7 @@ export const rotas = {
     { nome: "Padrón", distanciaParaProximo: 15 },
     { nome: "Santiago", distanciaParaProximo: 0 },
   ],
-  interior: [
+  Interior: [
     { nome: "Viseu", distanciaParaProximo: 70 },
     { nome: "Coimbra", distanciaParaProximo: 60 },
     { nome: "Porto", distanciaParaProximo: 60 },

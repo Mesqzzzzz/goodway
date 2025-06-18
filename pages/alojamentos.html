@@ -4,57 +4,151 @@
     <meta charset="UTF-8" />
     <title>Goodway - Alojamentos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Scroll personalizado para cards */
+      #lista-alojamentos {
+        scrollbar-width: thin;
+        scrollbar-color: #b45c04 #f3f4f6;
+      }
+      #lista-alojamentos::-webkit-scrollbar {
+        width: 8px;
+      }
+      #lista-alojamentos::-webkit-scrollbar-track {
+        background: #f3f4f6;
+        border-radius: 9999px;
+      }
+      #lista-alojamentos::-webkit-scrollbar-thumb {
+        background-color: #b45c04;
+        border-radius: 9999px;
+        border: 2px solid #f3f4f6;
+      }
+      /* Fade-in para lista */
+      .fade-in {
+        animation: fadeIn 0.5s ease forwards;
+        opacity: 0;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-    <header class="bg-white shadow-md">
+  <body
+    onload="iniciar()"
+    class="bg-[#fffaf3] text-gray-800 min-h-screen flex flex-col font-sans"
+  >
+    <header class="bg-[#fffaf3] shadow-md sticky top-0 z-30">
       <div
-        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+        class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">Goodway</h1>
-        <nav class="space-x-6">
-          <a href="../app.html" class="text-gray-700 hover:text-blue-600"
+        <h1
+          class="text-3xl font-extrabold tracking-wide text-[#b45c04] select-none"
+        >
+          Goodway
+        </h1>
+        <nav
+          class="hidden md:flex space-x-8 text-gray-700 font-medium tracking-wide"
+          aria-label="Menu principal"
+        >
+          <a
+            href="../app.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Início</a
           >
-          <a href="planeador.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="planeador.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Planeador</a
           >
-          <a href="mapa.html" class="text-gray-700 hover:text-blue-600">Mapa</a>
-          <a href="alojamentos.html" class="text-blue-600 font-semibold"
+          <a
+            href="mapa.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >Mapa</a
+          >
+          <a
+            href="alojamentos.html"
+            class="relative pb-1 text-[#b45c04] font-semibold border-b-2 border-[#b45c04] pb-0.5"
             >Alojamentos</a
           >
-          <a href="perfil.html" class="text-gray-700 hover:text-blue-600"
+          <a
+            href="perfil.html"
+            class="relative pb-1 after:block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-[#b45c04] after:transition-transform after:duration-300 hover:after:scale-x-100"
             >Perfil</a
           >
-          <button onclick="logout()" class="text-red-600 hover:underline">
+          <button
+            onclick="logout()"
+            class="text-red-600 hover:underline focus:outline-none"
+            aria-label="Sair da aplicação"
+          >
             Sair
           </button>
         </nav>
       </div>
     </header>
 
-    <main class="flex-grow max-w-4xl mx-auto p-6">
-      <section class="space-y-4">
-        <h2 class="text-2xl font-bold text-blue-600">Alojamentos</h2>
-        <p>
+    <main
+      class="flex-grow max-w-5xl mx-auto px-6 py-10 fade-in"
+      role="main"
+      aria-labelledby="titulo-alojamentos"
+    >
+      <section class="space-y-6">
+        <h2
+          id="titulo-alojamentos"
+          class="text-4xl font-bold text-[#b45c04] tracking-tight"
+        >
+          Alojamentos
+        </h2>
+        <p class="max-w-3xl text-gray-700 text-lg leading-relaxed">
           Aqui vais poder consultar alojamentos simulados com dados do mock
           server.
         </p>
-        <div
-          id="lista-alojamentos"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-        >
-          <!-- Alojamentos serão carregados aqui -->
-        </div>
+        <section class="space-y-4">
+          <h2 class="text-2xl font-bold text-[#b45c04] mb-2">Filtros</h2>
+          <form id="filtros-form" class="flex flex-wrap gap-4 mb-6">
+            <input
+              type="text"
+              id="filtro-localizacao"
+              placeholder="Localização"
+              class="border border-gray-300 rounded px-3 py-2 w-48"
+            />
+            <select
+              id="filtro-avaliacao"
+              class="border border-gray-300 rounded px-3 py-2 w-48"
+            >
+              <option value="0">Avaliação mínima</option>
+              <option value="1">1 estrela</option>
+              <option value="2">2 estrelas</option>
+              <option value="3">3 estrelas</option>
+              <option value="4">4 estrelas</option>
+              <option value="5">5 estrelas</option>
+            </select>
+            <button
+              type="button"
+              id="botao-limpar-filtros"
+              class="bg-[#b45c04] text-white rounded px-4 py-2 hover:bg-[#935003]"
+            >
+              Limpar filtros
+            </button>
+          </form>
+
+          <div
+            id="lista-alojamentos"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            <!-- Alojamentos serão carregados aqui -->
+          </div>
+        </section>
       </section>
     </main>
 
     <footer
-      class="bg-white border-t mt-auto py-4 text-center text-sm text-gray-500"
+      class="bg-[#fffaf3] border-t mt-auto py-5 text-center text-sm text-gray-500 font-mono"
     >
       © 2025 Goodway. Todos os direitos reservados.
     </footer>
 
-    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
     <script type="module" src="../js/alojamentos.js"></script>
   </body>
 </html>

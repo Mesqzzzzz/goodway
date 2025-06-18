@@ -45,14 +45,14 @@ async function mostrarComentarios(alojamentoId) {
     ) || [];
   const comentarios = [...mock, ...locais];
 
-  comentariosContainer.innerHTML = `<h2 class=\"text-2xl font-semibold mb-4 text-blue-600\">Comentários e Avaliações</h2>`;
+  comentariosContainer.innerHTML = `<h2 class="text-2xl font-semibold mb-4 text-destaque">Comentários e Avaliações</h2>`;
 
   if (comentarios.length === 0) {
     comentariosContainer.innerHTML +=
       "<p>Sem comentários para este alojamento.</p>";
   } else {
     const media = calcularMediaAvaliacoes(comentarios);
-    comentariosContainer.innerHTML += `<p class=\"mb-4 font-medium\">Avaliação média: <span class=\"text-yellow-500 text-lg\">${criarEstrelas(
+    comentariosContainer.innerHTML += `<p class="mb-4 font-medium">Avaliação média: <span class="text-yellow-500 text-lg">${criarEstrelas(
       Math.round(media)
     )}</span> (${media} / 5)</p>`;
 
@@ -61,40 +61,45 @@ async function mostrarComentarios(alojamentoId) {
 
     comentarios.forEach((c) => {
       const li = document.createElement("li");
-      li.className = "border p-4 rounded shadow-sm bg-white";
+      li.className =
+        "border border-gray-200 p-4 rounded-lg shadow-sm bg-[#fffaf3] transition hover:shadow-md";
       li.innerHTML = `
-        <strong>${c.usuario}</strong> - <small class=\"text-gray-500\">${
+        <strong>${c.usuario}</strong> - <small class="text-gray-500">${
         c.data
       }</small><br>
-        <span class=\"text-yellow-500 text-lg\">${criarEstrelas(
+        <span class="text-yellow-500 text-lg">${criarEstrelas(
           c.avaliacao
         )}</span><br>
-        <em class=\"text-gray-700\">${c.texto}</em>
+        <em class="text-gray-700">${c.texto}</em>
       `;
       ul.appendChild(li);
     });
 
     comentariosContainer.appendChild(ul);
   }
-
   // Formulário
   const form = document.createElement("form");
-  form.className = "bg-white border mt-6 p-4 rounded shadow space-y-4";
+  form.className =
+    "bg-[#fffaf3] border border-gray-200 mt-6 p-6 rounded-lg shadow-md space-y-4";
   form.innerHTML = `
-    <h3 class=\"text-lg font-semibold\">Adicionar comentário</h3>
-    <input type=\"text\" id=\"usuario\" required placeholder=\"O seu nome\" class=\"w-full border p-2 rounded\" />
-    <textarea id=\"texto\" required placeholder=\"O seu comentário\" class=\"w-full border p-2 rounded\"></textarea>
-    <label class=\"block\">Avaliação:
-      <select id=\"avaliacao\" class=\"border mt-1 rounded p-1\">
-        <option value=\"5\">5 - Excelente</option>
-        <option value=\"4\">4 - Bom</option>
-        <option value=\"3\">3 - Médio</option>
-        <option value=\"2\">2 - Fraco</option>
-        <option value=\"1\">1 - Mau</option>
-      </select>
-    </label>
-    <button type=\"submit\" class=\"bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700\">Submeter</button>
-  `;
+  <h3 class="text-lg font-semibold text-destaque">Adicionar comentário</h3>
+  <input type="text" id="usuario" required placeholder="O seu nome"
+    class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-destaque" />
+  <textarea id="texto" required placeholder="O seu comentário"
+    class="w-full border border-gray-300 p-3 rounded resize-none focus:outline-none focus:ring-2 focus:ring-destaque"></textarea>
+  <label class="block text-sm font-medium text-gray-700">Avaliação:
+    <select id="avaliacao"
+      class="border border-gray-300 mt-1 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-destaque">
+      <option value="5">5 - Excelente</option>
+      <option value="4">4 - Bom</option>
+      <option value="3">3 - Médio</option>
+      <option value="2">2 - Fraco</option>
+      <option value="1">1 - Mau</option>
+    </select>
+  </label>
+  <button type="submit"
+    class="bg-destaque text-white px-6 py-2 rounded shadow hover:bg-destaque/90 transition">Submeter</button>
+`;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -129,10 +134,10 @@ obterAlojamentoPorId(id).then((a) => {
   galeriaEl.innerHTML = a.fotos
     .map(
       (foto) => `
-        <div class=\"w-full h-64 overflow-hidden rounded shadow cursor-pointer group\">
-          <img src=\"${foto}\" alt=\"Foto de ${a.nome}\" class=\"w-full h-full object-cover group-hover:opacity-75 transition\" onclick=\"mostrarLightbox('${foto}')\" />
-        </div>
-      `
+      <div class="w-full h-64 overflow-hidden rounded-xl shadow-md cursor-pointer group">
+        <img src="${foto}" alt="Foto de ${a.nome}" class="w-full h-full object-cover group-hover:opacity-80 transition" onclick="mostrarLightbox('${foto}')" />
+      </div>
+    `
     )
     .join("");
 
@@ -143,12 +148,12 @@ obterAlojamentoPorId(id).then((a) => {
 window.mostrarLightbox = function (url) {
   const overlay = document.createElement("div");
   overlay.className =
-    "fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50";
+    "fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50";
   overlay.innerHTML = `
-    <div class=\"relative\">
-      <img src=\"${url}\" class=\"max-h-[90vh] max-w-[90vw] rounded\" />
-      <button class=\"absolute top-2 right-2 text-white text-3xl\" onclick=\"this.parentElement.parentElement.remove()\">×</button>
-    </div>
-  `;
+  <div class="relative">
+    <img src="${url}" class="max-h-[90vh] max-w-[90vw] rounded-xl shadow-lg" />
+    <button class="absolute top-2 right-2 text-white text-3xl bg-black/60 rounded-full px-3 pb-1 hover:bg-black" onclick="this.parentElement.parentElement.remove()">×</button>
+  </div>
+`;
   document.body.appendChild(overlay);
 };

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Goodway - Backoffice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#fffaf3] min-h-screen flex flex-col">
+    <header
+      class="bg-[#fffaf3] shadow-md sticky top-0 z-30 p-5 flex justify-between items-center"
+    >
+      <h1 class="text-3xl font-extrabold text-[#b45c04] select-none">
+        Goodway Backoffice
+      </h1>
+      <button onclick="logout()" class="text-red-600 hover:underline">
+        Sair
+      </button>
+    </header>
+
+    <main class="flex-grow p-6 max-w-6xl mx-auto">
+      <!-- Tabs -->
+      <nav class="mb-6 border-b border-gray-300">
+        <ul class="flex space-x-6 text-[#b45c04] font-semibold">
+          <li>
+            <button
+              class="tab-btn border-b-4 border-transparent pb-2 hover:border-[#b45c04]"
+              data-tab="alojamentos"
+            >
+              Alojamentos
+            </button>
+          </li>
+          <li>
+            <button
+              class="tab-btn border-b-4 border-transparent pb-2 hover:border-[#b45c04]"
+              data-tab="comentarios"
+            >
+              Comentários
+            </button>
+          </li>
+          <li>
+            <button
+              class="tab-btn border-b-4 border-transparent pb-2 hover:border-[#b45c04]"
+              data-tab="users"
+            >
+              Users
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Conteúdo das tabs -->
+      <section id="alojamentos" class="tab-content">
+        <h2 class="text-2xl font-bold mb-6">Gestão de Alojamentos</h2>
+
+        <button
+          id="btn-add-alojamento"
+          class="mb-4 bg-[#b45c04] text-white px-4 py-2 rounded hover:bg-[#9c4703] transition"
+        >
+          Adicionar Alojamento
+        </button>
+
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-[#f3e9d7]">
+              <th class="border border-gray-300 p-2 text-left">Nome</th>
+              <th class="border border-gray-300 p-2 text-left">Localidade</th>
+              <th class="border border-gray-300 p-2 text-left">Tipo</th>
+              <th class="border border-gray-300 p-2 text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody
+            id="lista-alojamentos"
+            class="divide-y divide-gray-300"
+          ></tbody>
+        </table>
+      </section>
+
+      <section id="comentarios" class="tab-content hidden">
+        <h2 class="text-2xl font-bold mb-6">Comentários</h2>
+
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-[#f3e9d7]">
+              <th class="border border-gray-300 p-2 text-left">Utilizador</th>
+              <th class="border border-gray-300 p-2 text-left">Comentário</th>
+              <th class="border border-gray-300 p-2 text-left">Estrelas</th>
+              <th class="border border-gray-300 p-2 text-center">Data</th>
+            </tr>
+          </thead>
+          <tbody
+            id="lista-comentarios"
+            class="divide-y divide-gray-300"
+          ></tbody>
+        </table>
+      </section>
+
+      <section id="users" class="tab-content hidden">
+        <h2 class="text-2xl font-bold mb-6">Gestão de Utilizadores</h2>
+
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-[#f3e9d7]">
+              <th class="border border-gray-300 p-2 text-left">Username</th>
+              <th class="border border-gray-300 p-2 text-left">Email</th>
+              <th class="border border-gray-300 p-2 text-left">Role</th>
+            </tr>
+          </thead>
+          <tbody id="lista-users" class="divide-y divide-gray-300"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Modal para alojamentos (reutiliza o anterior) -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white rounded p-6 max-w-md w-full shadow-lg">
+        <h3 id="modal-title" class="text-xl font-bold mb-4"></h3>
+        <form id="form-alojamento" class="space-y-4">
+          <div>
+            <label for="nome" class="block font-semibold">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              class="w-full border border-gray-300 rounded p-2"
+            />
+          </div>
+          <div>
+            <label for="localidade" class="block font-semibold"
+              >Localidade</label
+            >
+            <input
+              type="text"
+              id="localidade"
+              name="localidade"
+              required
+              class="w-full border border-gray-300 rounded p-2"
+            />
+          </div>
+          <div>
+            <label for="tipo" class="block font-semibold">Tipo</label>
+            <select
+              id="tipo"
+              name="tipo"
+              required
+              class="w-full border border-gray-300 rounded p-2"
+            >
+              <option value="hotel">Hotel</option>
+              <option value="hostel">Hostel</option>
+              <option value="casa rural">Casa Rural</option>
+              <option value="albergue">Albergue</option>
+            </select>
+          </div>
+          <div class="flex justify-end space-x-4 mt-6">
+            <button
+              type="button"
+              id="btn-cancel"
+              class="px-4 py-2 rounded border border-gray-400 hover:bg-gray-100"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 bg-[#b45c04] text-white rounded hover:bg-[#9c4703]"
+            >
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/backoffice.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        checkAuth();
+      });
+    </script>
+  </body>
+</html>
