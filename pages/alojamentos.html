@@ -2,6 +2,7 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
     <title>Goodway - Alojamentos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -38,7 +39,7 @@
     onload="iniciar()"
     class="bg-[#fffaf3] text-gray-800 min-h-screen flex flex-col font-sans"
   >
-    <header class="bg-[#fffaf3] shadow-md sticky top-0 z-30">
+    <header class="bg-white shadow-md sticky top-0 z-30">
       <div
         class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
       >
@@ -87,6 +88,8 @@
       </div>
     </header>
 
+    <!-- ... head e início do body iguais ... -->
+
     <main
       class="flex-grow max-w-5xl mx-auto px-6 py-10 fade-in"
       role="main"
@@ -103,7 +106,11 @@
           Aqui vais poder consultar alojamentos simulados com dados do mock
           server.
         </p>
-        <section class="space-y-4">
+
+        <!-- Bloco de Filtros -->
+        <section
+          class="space-y-4 bg-white p-6 rounded-xl shadow-md border border-gray-200"
+        >
           <h2 class="text-2xl font-bold text-[#b45c04] mb-2">Filtros</h2>
           <form id="filtros-form" class="flex flex-wrap gap-4 mb-6">
             <input
@@ -132,22 +139,26 @@
             </button>
           </form>
 
+          <!-- Lista de alojamentos -->
           <div
             id="lista-alojamentos"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           >
-            <!-- Alojamentos serão carregados aqui -->
+            <!-- Alojamentos serão carregados aqui dinamicamente -->
           </div>
         </section>
       </section>
     </main>
 
-    <footer
-      class="bg-[#fffaf3] border-t mt-auto py-5 text-center text-sm text-gray-500 font-mono"
-    >
-      © 2025 Goodway. Todos os direitos reservados.
+    <footer class="bg-white border-t border-gray-300 py-6 mt-12">
+      <div
+        class="max-w-7xl mx-auto px-4 text-center text-gray-700 text-sm select-none"
+      >
+        <p class="mt-2 text-[#b45c04] font-semibold">
+          © 2025 Goodway. Todos os direitos reservados.
+        </p>
+      </div>
     </footer>
-
     <script src="../js/main.js"></script>
     <script type="module" src="../js/alojamentos.js"></script>
   </body>

@@ -8,7 +8,6 @@ window.iniciar = async function () {
   await carregarAlojamentos(); // aguarda o carregamento
   limparFiltros(); // mostrar alojamentos e limpar filtros
   mostrarLoading(false); // esconder o loading
-  console.log("teste depois do carregamento");
 };
 
 function mostrarLoading(ativo) {
@@ -51,10 +50,7 @@ async function carregarAlojamentos() {
     }
   });
 
-  // Esperar por todas
   await Promise.all(promessas);
-
-  // Atualizar UI
   mostrarAlojamentos(alojamentosCache);
 }
 
@@ -81,7 +77,7 @@ function mostrarAlojamentos(alojamentos) {
     const card = document.createElement("a");
     card.href = `alojamento.html?id=${a.id}`;
     card.className =
-      "block bg-[#fffaf3] shadow rounded p-4 border border-gray-200 hover:shadow-lg transition cursor-pointer";
+      "block bg-white shadow-md rounded-xl p-4 border border-gray-200 hover:shadow-lg hover:scale-[1.01] transition-transform cursor-pointer";
     card.setAttribute(
       "aria-label",
       `${a.nome}, localizado em ${a.localizacao}, avaliação: ${

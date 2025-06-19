@@ -2,11 +2,15 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+
     <title>Goodway - Planeador</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-[#fffaf3] text-gray-800 min-h-screen flex flex-col font-sans">
-    <header class="bg-[#fffaf3] shadow-md sticky top-0 z-30">
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-30">
       <div
         class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
       >
@@ -55,6 +59,7 @@
       </div>
     </header>
 
+    <!-- Conteúdo principal -->
     <main
       id="conteudo"
       class="flex-grow max-w-4xl mx-auto p-6 px-4 sm:px-6 lg:px-8"
@@ -63,9 +68,10 @@
         Planeador do Caminho de Santiago
       </h2>
 
+      <!-- Formulário -->
       <form
         id="form-planeador"
-        class="space-y-8 bg-[#fffaf3] p-8 rounded-xl shadow-md border border-gray-200"
+        class="space-y-8 bg-white p-8 rounded-xl shadow-md border border-gray-200"
         novalidate
       >
         <div>
@@ -78,7 +84,6 @@
             required
           >
             <option value="" disabled selected>Seleciona uma rota</option>
-            <!-- Opções adicionadas pelo JS -->
           </select>
         </div>
 
@@ -135,6 +140,7 @@
             <option value="dificil">Difícil</option>
           </select>
         </div>
+
         <button
           type="submit"
           class="w-full bg-[#b45c04] text-white font-semibold text-base py-2.5 rounded-md shadow-sm hover:bg-[#924203] focus:outline-none focus:ring-2 focus:ring-[#b45c04] transition-colors duration-200"
@@ -143,9 +149,10 @@
         </button>
       </form>
 
+      <!-- Resultado da Rota -->
       <div
         id="resultado-rota"
-        class="hidden mt-12 p-6 bg-[#f0f8ff] border border-blue-300 rounded-xl max-w-4xl mx-auto transition-opacity duration-500 shadow-inner"
+        class="hidden mt-12 p-6 bg-white border border-blue-200 rounded-xl max-w-4xl mx-auto transition-opacity duration-500 shadow-inner"
         aria-live="polite"
       >
         <h3 class="text-2xl font-semibold mb-6 text-[#b45c04] tracking-wide">
@@ -158,7 +165,8 @@
       </div>
     </main>
 
-    <footer class="bg-[#fffaf3] border-t border-gray-300 py-6 mt-12">
+    <!-- Rodapé -->
+    <footer class="bg-white border-t border-gray-300 py-6 mt-12">
       <div
         class="max-w-7xl mx-auto px-4 text-center text-gray-700 text-sm select-none"
       >

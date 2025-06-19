@@ -2,6 +2,9 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+
     <title>Goodway - Perfil</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -37,7 +40,7 @@
     </style>
   </head>
   <body class="bg-[#fffaf3] text-gray-800 min-h-screen flex flex-col font-sans">
-    <header class="bg-[#fffaf3] shadow-md sticky top-0 z-30">
+    <header class="bg-white shadow-md sticky top-0 z-30">
       <div
         class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center"
       >
@@ -85,6 +88,7 @@
         </nav>
       </div>
     </header>
+
     <main
       id="conteudo"
       class="flex-grow max-w-4xl mx-auto px-6 py-10 space-y-12"
@@ -104,7 +108,7 @@
           aria-label="Estatísticas do utilizador"
         >
           <div
-            class="bg-[#fffaf3] rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition"
+            class="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition"
           >
             <p class="text-3xl font-extrabold text-[#b45c04]">0 km</p>
             <p class="mt-1 font-semibold text-sm uppercase tracking-widest">
@@ -112,7 +116,7 @@
             </p>
           </div>
           <div
-            class="bg-[#fffaf3] rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition"
+            class="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition"
           >
             <p class="text-3xl font-extrabold text-[#b45c04]">0</p>
             <p class="mt-1 font-semibold text-sm uppercase tracking-widest">
@@ -120,7 +124,7 @@
             </p>
           </div>
           <div
-            class="bg-[#fffaf3] rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition"
+            class="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition"
           >
             <p class="text-3xl font-extrabold text-[#b45c04]">0</p>
             <p class="mt-1 font-semibold text-sm uppercase tracking-widest">
@@ -130,9 +134,32 @@
         </div>
       </section>
 
+      <!-- Nova secção decorativa para equipamentos -->
+      <section
+        class="fade-in max-w-3xl mx-auto flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg border border-gray-200 p-6 space-y-6 md:space-y-0 md:space-x-8"
+        aria-label="Informação sobre equipamentos"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+          alt="Mochila e equipamento de caminhada"
+          class="w-full md:w-48 rounded-lg object-cover shadow-md"
+          loading="lazy"
+        />
+        <div>
+          <h3 class="text-2xl font-bold text-[#b45c04] mb-2">
+            Equipamentos essenciais para o Caminho
+          </h3>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Prepara-te com os melhores equipamentos para uma caminhada
+            confortável e segura. Aqui encontras uma lista dos itens
+            recomendados para levar contigo na aventura.
+          </p>
+        </div>
+      </section>
+
       <section
         id="secao-equipamentos"
-        class="fade-in bg-[#fffaf3] rounded-xl shadow-lg border border-gray-200 p-8 max-w-3xl mx-auto"
+        class="fade-in bg-white rounded-lg shadow-lg border border-gray-200 p-8 max-w-3xl mx-auto"
       >
         <h2
           class="text-3xl font-bold text-[#b45c04] mb-6 border-b-2 border-[#b45c04] pb-2"
@@ -173,7 +200,7 @@
         </div>
       </div>
     </main>
-    <footer class="bg-[#fffaf3] border-t border-gray-300 py-6 mt-12">
+    <footer class="bg-white border-t border-gray-300 py-6 mt-12">
       <div
         class="max-w-7xl mx-auto px-4 text-center text-gray-700 text-sm select-none"
       >
