@@ -62,7 +62,7 @@ async function mostrarComentarios(alojamentoId) {
     comentarios.forEach((c) => {
       const li = document.createElement("li");
       li.className =
-        "border border-gray-200 p-4 rounded-lg shadow-sm bg-[#fffaf3] transition hover:shadow-md";
+        "border border-gray-200 p-4 rounded-lg shadow-sm bg-white transition hover:shadow-md";
       li.innerHTML = `
         <strong>${c.usuario}</strong> - <small class="text-gray-500">${
         c.data
@@ -77,29 +77,30 @@ async function mostrarComentarios(alojamentoId) {
 
     comentariosContainer.appendChild(ul);
   }
+
   // Formulário
   const form = document.createElement("form");
   form.className =
-    "bg-[#fffaf3] border border-gray-200 mt-6 p-6 rounded-lg shadow-md space-y-4";
+    "bg-white border border-gray-200 mt-6 p-6 rounded-lg shadow-md space-y-4";
   form.innerHTML = `
-  <h3 class="text-lg font-semibold text-destaque">Adicionar comentário</h3>
-  <input type="text" id="usuario" required placeholder="O seu nome"
-    class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-destaque" />
-  <textarea id="texto" required placeholder="O seu comentário"
-    class="w-full border border-gray-300 p-3 rounded resize-none focus:outline-none focus:ring-2 focus:ring-destaque"></textarea>
-  <label class="block text-sm font-medium text-gray-700">Avaliação:
-    <select id="avaliacao"
-      class="border border-gray-300 mt-1 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-destaque">
-      <option value="5">5 - Excelente</option>
-      <option value="4">4 - Bom</option>
-      <option value="3">3 - Médio</option>
-      <option value="2">2 - Fraco</option>
-      <option value="1">1 - Mau</option>
-    </select>
-  </label>
-  <button type="submit"
-    class="bg-destaque text-white px-6 py-2 rounded shadow hover:bg-destaque/90 transition">Submeter</button>
-`;
+    <h3 class="text-lg font-semibold text-destaque">Adicionar comentário</h3>
+    <input type="text" id="usuario" required placeholder="O seu nome"
+      class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-destaque" />
+    <textarea id="texto" required placeholder="O seu comentário"
+      class="w-full border border-gray-300 p-3 rounded resize-none focus:outline-none focus:ring-2 focus:ring-destaque"></textarea>
+    <label class="block text-sm font-medium text-gray-700">Avaliação:
+      <select id="avaliacao"
+        class="border border-gray-300 mt-1 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-destaque">
+        <option value="5">5 - Excelente</option>
+        <option value="4">4 - Bom</option>
+        <option value="3">3 - Médio</option>
+        <option value="2">2 - Fraco</option>
+        <option value="1">1 - Mau</option>
+      </select>
+    </label>
+    <button type="submit"
+      class="bg-destaque text-white px-6 py-2 rounded shadow hover:bg-destaque/90 transition">Submeter</button>
+  `;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
