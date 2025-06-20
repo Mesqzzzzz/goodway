@@ -1,11 +1,11 @@
-
 # 🌄 Goodway — Planeador Personalizado do Caminho de Santiago
+
+> 🔗 A aplicação está disponível em: **[https://goodway-esmad.netlify.app/](https://goodway-esmad.netlify.app/)**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![LocalStorage](https://img.shields.io/badge/Web%20Storage-LocalStorage-blue?style=flat)
 
 > **Goodway** é uma aplicação web que permite planear o Caminho de Santiago de forma personalizada, visualizando rotas, alojamentos, comentários e pontos de interesse de forma interativa e acessível.
 
@@ -26,60 +26,39 @@
 
 ## 🧱 Tecnologias e Ferramentas Utilizadas
 
-| Tecnologia        | Descrição                                                                 |
-|-------------------|---------------------------------------------------------------------------|
-| `HTML` / `CSS`    | Estrutura base das páginas e estilo básico.                              |
-| **TailwindCSS**   | Framework utilitária para estilização rápida e responsiva.               |
-| `JavaScript` ES6  | Lógica do cliente, manipulação do DOM e simulação de backend.            |
-| `LocalStorage`    | Armazenamento local de utilizadores, sessões e comentários.              |
-| `Mock Server`     | Módulo JS com dados simulados de alojamentos e comentários (`mock/`).    |
-| `Lightbox`        | Visualização de imagens em tela cheia com efeito sobreposto.             |
-| `Modular JS`      | Código organizado por páginas e responsabilidades.                       |
-
----
-
-## 🗂️ Estrutura do Projeto
-
-```
-/
-├── index.html                # Landing page
-├── login.html                # Login e registo
-├── app.html                  # Página principal após login
-├── mapa.html                 # Mapa com alojamentos
-├── alojamento.html           # Detalhes de cada alojamento
-├── rotas.html                # Geração de rotas personalizadas
-├── mock/
-│   ├── server.js             # Mock de alojamentos
-│   └── comentarios.js        # Mock de comentários
-├── scripts/
-│   ├── alojamentos.js        # Lógica para alojamentos
-│   ├── mapa.js               # Lógica para mapa
-│   ├── rotas.js              # Lógica de geração de rotas
-│   └── login.js              # Validação de utilizador
-└── assets/
-    └── imagens/              # Imagens de exemplo
-```
+| Tecnologia       | Descrição                                                             |
+| ---------------- | --------------------------------------------------------------------- |
+| `HTML` / `CSS`   | Estrutura base das páginas e estilo básico.                           |
+| **TailwindCSS**  | Framework utilitária para estilização rápida e responsiva.            |
+| `JavaScript` ES6 | Lógica do cliente, manipulação do DOM e simulação de backend.         |
+| `LocalStorage`   | Armazenamento local de utilizadores, sessões e comentários.           |
+| `Mock Server`    | Módulo JS com dados simulados de alojamentos e comentários (`mock/`). |
+| `Lightbox`       | Visualização de imagens em tela cheia com efeito sobreposto.          |
+| `Modular JS`     | Código organizado por páginas e responsabilidades.                    |
 
 ---
 
 ## 📸 Capturas de Ecrã
 
-> Substitui os links abaixo pelos teus screenshots:
-
 ### 🟠 Página de Login / Registo
-![Login Screenshot](assets/imagens/login-screenshot.png)
+
+![Login Screenshot](assets/login.png)
 
 ### 🟡 Lista de Alojamentos com Filtros
-![Alojamentos Screenshot](assets/imagens/alojamentos-screenshot.png)
+
+![Alojamentos Screenshot](assets/alojamentos.png)
 
 ### 🟢 Detalhes de Alojamento com Comentários
-![Detalhes Screenshot](assets/imagens/detalhes-screenshot.png)
+
+![Detalhes Screenshot](assets/alojamento.png)
 
 ### 🔵 Mapa Interativo com Alojamentos
-![Mapa Screenshot](assets/imagens/mapa-screenshot.png)
+
+![Mapa Screenshot](assets/mapa.png)
 
 ### 🟣 Geração de Rota Personalizada
-![Rotas Screenshot](assets/imagens/rotas-screenshot.png)
+
+![Rotas Screenshot](assets/planeador.png)
 
 ---
 
@@ -100,4 +79,3 @@
 - O sistema de autenticação é **simulado** com `localStorage`.
 - Todos os dados são **mockados** para demonstração, sem backend real.
 - A aplicação está preparada para ser facilmente adaptada para APIs reais.
-
